@@ -99,9 +99,8 @@ export function Footer() {
           <div>
             <h4 className="text-white font-medium mb-6 uppercase tracking-wider text-sm">Disponibilidad</h4>
             <ul className="flex flex-col gap-3 text-sm text-luxe-light-gray mb-8">
-              {businessInfo.hours.map((h, i) => (
-                <li key={i}>{h.days}: {h.time}</li>
-              ))}
+              <li>Lunes a sábado: 9:00 - 18:00</li>
+              <li>Domingo: Cerrado</li>
             </ul>
           </div>
         </div>

@@ -43,11 +43,8 @@ export function UbicacionFacilidades() {
                 </div>
                 <div>
                   <h4 className="text-white font-medium mb-1">Horarios de Atención</h4>
-                  {businessInfo.hours.map((h, i) => (
-                    <p key={i} className="text-luxe-light-gray">
-                      <span className="inline-block w-32">{h.days}:</span> {h.time}
-                    </p>
-                  ))}
+                  <p className="text-luxe-light-gray">Lunes a sábado: 9:00 - 18:00</p>
+                  <p className="text-luxe-light-gray">Domingo: Cerrado</p>
                 </div>
               </div>
 
