@@ -5,7 +5,6 @@ import { siteConfig } from "@/lib/site";
 
 const metadataBase = new URL(env.siteUrl);
 const socialImageUrl = new URL('/opengraph-image', metadataBase).toString();
-const socialFallbackImageUrl = new URL(siteConfig.ogImage.path, metadataBase).toString();
 
 export const viewport: Viewport = {
   themeColor: "#000000",
@@ -44,12 +43,6 @@ export const metadata: Metadata = {
         height: 630,
         alt: siteConfig.ogImage.alt,
       },
-      {
-        url: socialFallbackImageUrl,
-        width: siteConfig.ogImage.width,
-        height: siteConfig.ogImage.height,
-        alt: siteConfig.ogImage.alt,
-      },
     ],
     locale: siteConfig.locale,
     type: "website",
@@ -58,7 +51,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: siteConfig.socialTitle,
     description: siteConfig.socialDescription,
-    images: [socialFallbackImageUrl],
+    images: [socialImageUrl],
   },
   other: {
     "og:image:secure_url": socialImageUrl,
