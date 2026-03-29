@@ -17,8 +17,13 @@ export const businessInfo: BusinessInfo = {
   whatsapp: "528334890188",
   mapsUrl: "https://maps.app.goo.gl/8b9WCU2HQ3HvudRq9",
   hours: [
-    { days: "Lunes a Sábado", time: "Con cita previa" },
     { days: "Domingo", time: "Cerrado" },
+    { days: "Lunes", time: "9:00 - 18:00" },
+    { days: "Martes", time: "9:00 - 18:00" },
+    { days: "Miércoles", time: "9:00 - 18:00" },
+    { days: "Jueves", time: "9:00 - 18:00" },
+    { days: "Viernes", time: "9:00 - 18:00" },
+    { days: "Sábado", time: "9:00 - 18:00" },
   ],
   social: {
     instagram: "https://www.instagram.com/luxebrowsspa/",

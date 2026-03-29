@@ -3,12 +3,43 @@ import { faqs } from "../data/faqs";
 import { env } from "./env";
 import { siteConfig } from "./site";
 
+const dayMap: Record<string, string> = {
+  Domingo: 'Sunday',
+  Lunes: 'Monday',
+  Martes: 'Tuesday',
+  Miércoles: 'Wednesday',
+  Jueves: 'Thursday',
+  Viernes: 'Friday',
+  Sábado: 'Saturday',
+};
+
+function toOpeningHoursSpecification() {
+  return businessInfo.hours.map((entry) => {
+    if (entry.time.toLowerCase() === 'cerrado') {
+      return {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: dayMap[entry.days],
+        opens: '00:00',
+        closes: '00:00',
+      };
+    }
+
+    const [opens, closes] = entry.time.split(' - ');
+    return {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: dayMap[entry.days],
+      opens,
+      closes,
+    };
+  });
+}
+
 export function generateLocalBusinessSchema() {
   return {
     "@context": "https://schema.org",
     "@type": ["LocalBusiness", "BeautySalon"],
     name: businessInfo.name,
-    image: `${env.siteUrl}${siteConfig.ogImage.path}`,
+    image: `${env.siteUrl}/opengraph-image`,
     "@id": `${env.siteUrl}/#business`,
     url: env.siteUrl,
     telephone: `+${businessInfo.whatsapp}`,
@@ -26,6 +57,7 @@ export function generateLocalBusinessSchema() {
       latitude: businessInfo.coordinates.lat,
       longitude: businessInfo.coordinates.lng,
     },
+    openingHoursSpecification: toOpeningHoursSpecification(),
     areaServed: ["Tampico", "Ciudad Madero", "Altamira"],
     hasMap: businessInfo.mapsUrl,
     description: siteConfig.description,
