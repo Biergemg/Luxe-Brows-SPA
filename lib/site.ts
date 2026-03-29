@@ -1,5 +1,22 @@
 import { businessInfo } from "@/data/businessInfo";
 
+export const landingVisibility = {
+  heroHighlights: false,
+  heroScrollCue: false,
+  whyChooseUs: false,
+  serviceContext: false,
+  resultsGallery: false,
+  commitment: false,
+} as const;
+
+const baseNavLinks = [
+  { label: "Servicios", href: "#servicios", visible: true },
+  { label: "Galería", href: "#galeria", visible: landingVisibility.resultsGallery },
+  { label: "Testimonios", href: "#testimonios", visible: true },
+  { label: "Ubicación", href: "#ubicacion", visible: true },
+  { label: "FAQ", href: "#faq", visible: true },
+] as const;
+
 export const siteConfig = {
   name: businessInfo.name,
   shortName: "Luxe",
@@ -16,13 +33,7 @@ export const siteConfig = {
     height: 630,
     alt: "Luxe Brows & Spa · cejas, pestañas y faciales",
   },
-  navLinks: [
-    { label: "Servicios", href: "#servicios" },
-    { label: "Galería", href: "#galeria" },
-    { label: "Testimonios", href: "#testimonios" },
-    { label: "Ubicación", href: "#ubicacion" },
-    { label: "FAQ", href: "#faq" },
-  ],
+  navLinks: baseNavLinks.filter((link) => link.visible).map(({ label, href }) => ({ label, href })),
   keywords: [
     "cejas",
     "pestañas",

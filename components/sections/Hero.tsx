@@ -2,6 +2,7 @@ import React from 'react';
 import { Button } from '../ui/Button';
 import { generateWhatsAppLink } from '@/lib/utils';
 import { MapPin } from 'lucide-react';
+import { landingVisibility } from '@/lib/site';
 
 export function Hero() {
   return (
@@ -45,23 +46,27 @@ export function Hero() {
           </Button>
         </div>
 
-        <div className="mt-10 grid w-full max-w-4xl grid-cols-1 gap-3 sm:grid-cols-3">
-          {[
-            "Atención personalizada",
-            "Ambiente limpio y cuidado",
-            "Servicios para tu rutina y ocasiones especiales"
-          ].map((item) => (
-            <div key={item} className="luxury-panel rounded-full px-5 py-3 text-sm text-luxe-white/90">
-              {item}
-            </div>
-          ))}
-        </div>
+        {landingVisibility.heroHighlights ? (
+          <div className="mt-10 grid w-full max-w-4xl grid-cols-1 gap-3 sm:grid-cols-3">
+            {[
+              "Atención personalizada",
+              "Ambiente limpio y cuidado",
+              "Servicios para tu rutina y ocasiones especiales"
+            ].map((item) => (
+              <div key={item} className="luxury-panel rounded-full px-5 py-3 text-sm text-luxe-white/90">
+                {item}
+              </div>
+            ))}
+          </div>
+        ) : null}
       </div>
 
-      <div className="pointer-events-none absolute bottom-5 md:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-60">
-        <span className="text-[10px] uppercase tracking-[0.3em] text-luxe-light-gray font-medium">Ver más</span>
-        <div className="w-px h-10 md:h-12 bg-gradient-to-b from-luxe-gray to-transparent" />
-      </div>
+      {landingVisibility.heroScrollCue ? (
+        <div className="pointer-events-none absolute bottom-5 md:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-60">
+          <span className="text-[10px] uppercase tracking-[0.3em] text-luxe-light-gray font-medium">Ver más</span>
+          <div className="w-px h-10 md:h-12 bg-gradient-to-b from-luxe-gray to-transparent" />
+        </div>
+      ) : null}
     </section>
   );
 }

@@ -10,16 +10,17 @@ import { UbicacionFacilidades } from "@/components/sections/UbicacionFacilidades
 import { FAQ } from "@/components/sections/FAQ";
 import { CTAFinal } from "@/components/sections/CTAFinal";
 import { Footer } from "@/components/sections/Footer";
+import { landingVisibility } from "@/lib/site";
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col">
       <Hero />
-      <ConfianzaUbicacion />
+      {landingVisibility.whyChooseUs ? <ConfianzaUbicacion /> : null}
       <ServiciosBento />
-      <AutoridadTecnica />
-      <GaleriaResultados />
-      <CompromisoLuxe />
+      {landingVisibility.serviceContext ? <AutoridadTecnica /> : null}
+      {landingVisibility.resultsGallery ? <GaleriaResultados /> : null}
+      {landingVisibility.commitment ? <CompromisoLuxe /> : null}
       <ProcesoAtencion />
       <Testimonios />
       <UbicacionFacilidades />
