@@ -5,16 +5,16 @@ export const siteConfig = {
   shortName: "Luxe",
   locale: "es_MX",
   description:
-    "Servicios de cejas, pestañas y faciales en Plaza LA FÉ. Consulta información y agenda por WhatsApp.",
-  title: "Luxe Brows & Spa | Cejas, pestañas y faciales",
-  socialTitle: "Luxe Brows & Spa | Cejas, pestañas y faciales",
+    "Cejas, pestañas, faciales y cuidado personal en Plaza LA FÉ, Ciudad Madero. Consulta servicios y agenda tu cita por WhatsApp.",
+  title: "Luxe Brows & Spa | Cejas, pestañas y faciales en Ciudad Madero",
+  socialTitle: "Luxe Brows & Spa | Cejas, pestañas y faciales en Ciudad Madero",
   socialDescription:
-    "Cejas, pestañas y faciales en un espacio pensado para que tu cita se sienta tranquila, cuidada y acorde a lo que te gusta.",
+    "Servicios de cejas, pestañas y faciales en Plaza LA FÉ. Agenda por WhatsApp y consulta disponibilidad, precios y ubicación.",
   ogImage: {
     path: "/images/share/og-hero.jpg",
     width: 1200,
     height: 630,
-    alt: "Luxe Brows & Spa · cejas, pestañas y faciales",
+    alt: "Luxe Brows & Spa en Plaza LA FÉ · cejas, pestañas y faciales",
   },
   navLinks: [
     { label: "Servicios", href: "#servicios" },
@@ -23,17 +23,18 @@ export const siteConfig = {
     { label: "FAQ", href: "#faq" },
   ],
   keywords: [
-    "cejas",
-    "pestañas",
-    "faciales",
-    "spa",
-    "brows",
+    "cejas ciudad madero",
+    "pestañas ciudad madero",
+    "faciales ciudad madero",
+    "spa ciudad madero",
+    "diseño de cejas ciudad madero",
     "lash lift",
     "laminado de cejas",
     "hydrafacial",
-    "HIFU",
-    "Plaza La Fe",
-    "Ciudad Madero",
+    "plaza la fe",
+    "luxe brows spa",
+    "ciudad madero",
+    "tampico",
   ],
 } as const;
 

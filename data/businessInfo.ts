@@ -30,7 +30,7 @@ export const businessInfo: BusinessInfo = {
     facebook: "https://www.facebook.com/people/Luxe-Brows-Spa/100093219125856/",
   },
   coordinates: {
-    lat: 22.2801,
-    lng: -97.8416,
+    lat: 22.2841587,
+    lng: -97.8473484,
   },
 };

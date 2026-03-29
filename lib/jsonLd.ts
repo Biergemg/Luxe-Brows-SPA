@@ -28,8 +28,8 @@ function toOpeningHoursSpecification() {
     return {
       '@type': 'OpeningHoursSpecification',
       dayOfWeek: dayMap[entry.days],
-      opens,
-      closes,
+      opens: opens.padStart(5, '0'),
+      closes: closes.padStart(5, '0'),
     };
   });
 }
@@ -39,14 +39,14 @@ export function generateLocalBusinessSchema() {
     "@context": "https://schema.org",
     "@type": ["LocalBusiness", "BeautySalon"],
     name: businessInfo.name,
-    image: `${env.siteUrl}/opengraph-image`,
+    image: `${env.siteUrl}${siteConfig.ogImage.path}`,
     "@id": `${env.siteUrl}/#business`,
     url: env.siteUrl,
     telephone: `+${businessInfo.whatsapp}`,
     sameAs: [businessInfo.social.instagram, businessInfo.social.facebook].filter(Boolean),
     address: {
       "@type": "PostalAddress",
-      streetAddress: businessInfo.address.street,
+      streetAddress: `${businessInfo.address.street}, ${businessInfo.address.location}${businessInfo.address.unit ? `, ${businessInfo.address.unit}` : ""}`,
       addressLocality: businessInfo.address.city,
       addressRegion: businessInfo.address.state,
       postalCode: businessInfo.address.postalCode,
@@ -61,6 +61,7 @@ export function generateLocalBusinessSchema() {
     areaServed: ["Tampico", "Ciudad Madero", "Altamira"],
     hasMap: businessInfo.mapsUrl,
     description: siteConfig.description,
+    priceRange: "$$",
   };
 }
 

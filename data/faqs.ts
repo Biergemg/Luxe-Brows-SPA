@@ -24,6 +24,11 @@ export const faqs: FAQ[] = [
   {
     id: "agenda",
     question: "¿Cómo puedo agendar?",
-    answer: "La forma más rápida es por WhatsApp. Nos escribes, te compartimos disponibilidad y confirmamos tu cita directamente."
+    answer: "La forma más rápida es por WhatsApp. Te compartimos disponibilidad y, cuando aplique, el apartado se confirma con anticipo de $100 MXN."
+  },
+  {
+    id: "reagenda",
+    question: "¿Puedo reagendar mi cita?",
+    answer: "Sí. Puedes reagendar conservando tu anticipo si avisas con al menos 12 horas de anticipación. La reagenda está sujeta a disponibilidad."
   }
 ];
