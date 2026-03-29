@@ -110,8 +110,8 @@ export function Footer() {
             &copy; {currentYear} {businessInfo.name}. Todos los derechos reservados.
           </p>
           <div className="flex gap-6">
-            <a href="#" className="text-xs text-luxe-light-gray hover:text-luxe-gray transition-colors">Aviso de Privacidad</a>
-            <a href="#" className="text-xs text-luxe-light-gray hover:text-luxe-gray transition-colors">Términos de Servicio</a>
+            <a href="/aviso-de-privacidad" className="text-xs text-luxe-light-gray hover:text-luxe-gray transition-colors">Aviso de privacidad</a>
+            <a href="/politicas-de-citas" className="text-xs text-luxe-light-gray hover:text-luxe-gray transition-colors">Políticas de citas</a>
           </div>
         </div>
       </div>
