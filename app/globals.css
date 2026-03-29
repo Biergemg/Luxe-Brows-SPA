@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  --color-luxe-black: #000000;
+  --color-luxe-white: #F2F2F2;
+  --color-luxe-gray: #595959;
+  --color-luxe-dark-gray: #262626;
+  --color-luxe-light-gray: #A6A6A6;
+
+  --font-serif: var(--font-playfair-display), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-luxe-black text-luxe-white font-sans antialiased selection:bg-luxe-gray selection:text-white;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-medium;
+  }
+}
+
+@layer utilities {
+  .cinematic-shadow {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7), 0 0 15px rgba(89, 89, 89, 0.15);
+  }
+  
+  .text-border-glow {
+    text-shadow: 0 0 10px rgba(89, 89, 89, 0.3);
+  }
+
+  .luxury-panel {
+    background:
+      linear-gradient(180deg, rgba(255,255,255,0.045) 0%, rgba(255,255,255,0.015) 100%),
+      rgba(20,20,20,0.78);
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow:
+      0 20px 60px rgba(0, 0, 0, 0.38),
+      inset 0 1px 0 rgba(255,255,255,0.04);
+    backdrop-filter: blur(14px);
+  }
+
+  .grain-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.08;
+    background-image:
+      radial-gradient(rgba(255,255,255,0.18) 0.45px, transparent 0.6px);
+    background-size: 12px 12px;
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.35));
+  }
+
+  .section-kicker {
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    font-size: 0.72rem;
+    color: rgba(166,166,166,0.92);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
