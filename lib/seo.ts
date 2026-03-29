@@ -4,7 +4,7 @@ import { env } from "@/lib/env";
 import { siteConfig } from "@/lib/site";
 
 const metadataBase = new URL(env.siteUrl);
-const socialImageUrl = new URL('/opengraph-image', metadataBase).toString();
+const socialImageUrl = new URL(siteConfig.ogImage.path, metadataBase).toString();
 
 export const viewport: Viewport = {
   themeColor: "#000000",

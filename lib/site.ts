@@ -11,7 +11,7 @@ export const siteConfig = {
   socialDescription:
     "Cejas, pestañas y faciales en un espacio pensado para que tu cita se sienta tranquila, cuidada y acorde a lo que te gusta.",
   ogImage: {
-    path: "/images/og-image.jpg",
+    path: "/images/share/og-hero.jpg",
     width: 1200,
     height: 630,
     alt: "Luxe Brows & Spa · cejas, pestañas y faciales",
