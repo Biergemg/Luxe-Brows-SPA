@@ -4,7 +4,6 @@ import { env } from "@/lib/env";
 import { siteConfig } from "@/lib/site";
 
 const metadataBase = new URL(env.siteUrl);
-const socialImageUrl = new URL(siteConfig.ogImage.path, metadataBase).toString();
 
 export const viewport: Viewport = {
   themeColor: "#000000",
@@ -36,14 +35,6 @@ export const metadata: Metadata = {
     description: siteConfig.socialDescription,
     url: env.siteUrl,
     siteName: siteConfig.name,
-    images: [
-      {
-        url: socialImageUrl,
-        width: 1200,
-        height: 630,
-        alt: siteConfig.ogImage.alt,
-      },
-    ],
     locale: siteConfig.locale,
     type: "website",
   },
@@ -51,12 +42,6 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: siteConfig.socialTitle,
     description: siteConfig.socialDescription,
-    images: [socialImageUrl],
-  },
-  other: {
-    "og:image:secure_url": socialImageUrl,
-    "og:image:alt": siteConfig.ogImage.alt,
-    "twitter:image:alt": siteConfig.ogImage.alt,
   },
   robots: {
     index: true,
