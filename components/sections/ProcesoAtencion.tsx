@@ -28,13 +28,14 @@ export function ProcesoAtencion() {
   ];
 
   return (
-    <section className="py-24 md:py-32 bg-luxe-black relative">
+    <section className="relative bg-luxe-black py-20 md:py-28">
       <div className="container mx-auto px-6 md:px-12 relative z-10 text-center">
+        <div className="mx-auto mb-5 h-px w-24 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
         <h2 className="font-serif text-3xl md:text-5xl font-medium text-white mb-6">
           Así es tu <span className="text-luxe-gray italic">experiencia</span>
         </h2>
         <p className="text-luxe-light-gray text-lg max-w-2xl mx-auto mb-16">
-          Un proceso simple y claro para que agendar sea fácil y tu cita se sienta cómoda desde el inicio.
+          Después de elegir tu servicio, te acompañamos paso a paso para que todo se sienta claro desde el inicio.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-4 max-w-6xl mx-auto mb-16">
@@ -48,7 +49,7 @@ export function ProcesoAtencion() {
                 <div className="hidden md:block absolute top-8 left-1/2 w-full h-[1px] bg-gradient-to-r from-luxe-gray/50 to-transparent" />
               )}
 
-              <h4 className="text-white font-medium text-lg mb-3 flex items-center gap-2">
+              <h4 className="text-white font-medium text-lg mb-3 flex items-center gap-2 justify-center">
                 {paso.title}
                 {idx === 0 && <CheckCircle2 className="w-4 h-4 text-[#25D366]" />}
               </h4>
@@ -59,7 +60,7 @@ export function ProcesoAtencion() {
 
         <Button size="lg" className="w-full sm:w-auto" asChild>
           <a href={generateWhatsAppLink()} target="_blank" rel="noopener noreferrer">
-            Dar el primer paso
+            Agendar por WhatsApp
           </a>
         </Button>
       </div>

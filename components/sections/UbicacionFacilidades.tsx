@@ -11,7 +11,7 @@ const mapsUrl = getGoogleMapsUrl();
 
 export function UbicacionFacilidades() {
   return (
-    <section id="ubicacion" className="py-24 md:py-32 bg-luxe-dark-gray border-t border-white/5 scroll-mt-20">
+    <section id="ubicacion" className="py-20 md:py-28 bg-luxe-dark-gray border-t border-white/5 scroll-mt-20">
       <div className="container mx-auto px-6 md:px-12 relative z-10">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-24">
           <div className="w-full lg:w-1/2">
@@ -20,7 +20,7 @@ export function UbicacionFacilidades() {
               <span className="text-luxe-gray italic">exacta y fácil de encontrar</span>
             </h2>
             <p className="text-luxe-light-gray text-lg mb-10">
-              Estamos en Plaza LA FÉ, Local 1. Aquí te dejamos la dirección completa y un acceso directo al mapa para que llegar sea simple desde el primer click.
+              Cuando estés lista para venir, aquí encuentras la dirección completa y un acceso directo al mapa para llegar con facilidad.
             </p>
 
             <div className="space-y-8 mb-10">

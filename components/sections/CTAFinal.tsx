@@ -5,7 +5,7 @@ import { whatsappMessages } from '@/lib/site';
 
 export function CTAFinal() {
   return (
-    <section className="py-24 md:py-32 bg-luxe-black relative overflow-hidden border-t border-white/5">
+    <section className="py-20 md:py-28 bg-luxe-black relative overflow-hidden border-t border-white/5">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(89,89,89,0.1)_0%,transparent_70%)] pointer-events-none" />
       <div className="grain-overlay" />
 

@@ -6,7 +6,7 @@ import { landingVisibility } from '@/lib/site';
 
 export function Hero() {
   return (
-    <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden bg-luxe-black" aria-label="Introducción">
+    <section className="relative min-h-[88svh] md:min-h-[92svh] flex items-center justify-center overflow-hidden bg-luxe-black" aria-label="Introducción">
       <div className="absolute inset-0 w-full h-full z-0">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-50 mix-blend-luminosity scale-105 animate-[pulse_20s_ease-in-out_infinite_alternate]"
@@ -18,7 +18,7 @@ export function Hero() {
         <div className="grain-overlay" />
       </div>
 
-      <div className="container relative z-10 mx-auto px-6 md:px-12 flex flex-col items-center text-center pt-36 pb-28 md:pt-40 md:pb-32 lg:pt-44 lg:pb-36">
+      <div className="container relative z-10 mx-auto px-6 md:px-12 flex flex-col items-center text-center pt-36 pb-18 md:pt-40 md:pb-20 lg:pt-44 lg:pb-24">
         <div className="inline-flex items-center gap-2 rounded-full border border-luxe-gray/30 bg-luxe-black/60 backdrop-blur-md px-4 py-1.5 mb-8 md:mb-12 shadow-[0_0_15px_rgba(89,89,89,0.15)]">
           <MapPin className="h-3.5 w-3.5 text-luxe-gray" />
           <span className="text-xs font-medium tracking-widest text-luxe-white uppercase">Plaza La Fe</span>
@@ -58,6 +58,10 @@ export function Hero() {
               </div>
             ))}
           </div>
+        ) : null}
+
+        {!landingVisibility.heroHighlights ? (
+          <div className="mt-12 h-px w-full max-w-5xl bg-gradient-to-r from-transparent via-white/10 to-transparent md:mt-14" />
         ) : null}
       </div>
 

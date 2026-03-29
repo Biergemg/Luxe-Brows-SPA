@@ -4,7 +4,7 @@ import { TestimonialCard } from '../ui/TestimonialCard';
 
 export function Testimonios() {
   return (
-    <section id="testimonios" className="py-24 md:py-32 bg-luxe-black relative scroll-mt-20 overflow-hidden">
+    <section id="testimonios" className="py-20 md:py-28 bg-luxe-black relative scroll-mt-20 overflow-hidden">
       <div className="absolute bottom-0 left-0 w-full h-[500px] bg-gradient-to-t from-luxe-gray/5 to-transparent pointer-events-none" />
 
       <div className="container mx-auto px-6 md:px-12 relative z-10">
@@ -14,7 +14,7 @@ export function Testimonios() {
               Experiencias <span className="text-luxe-gray italic">Luxe</span>
             </h2>
             <p className="text-luxe-light-gray text-lg">
-              Lo que más se repite en las opiniones es el trato, la limpieza y el cuidado con el que se trabaja cada servicio.
+              Después de la cita, lo que más se repite en las opiniones es el trato, la limpieza y el cuidado en cada servicio.
             </p>
           </div>
         </div>
