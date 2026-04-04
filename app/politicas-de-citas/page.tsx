@@ -5,7 +5,7 @@ import { businessInfo } from "@/data/businessInfo";
 export const metadata: Metadata = {
   title: "Políticas de Citas | Luxe Brows & Spa",
   description:
-    "Consulta las políticas de agenda, puntualidad, cancelaciones, reprogramaciones y condiciones generales de servicio de Luxe Brows & Spa.",
+    "Consulta las políticas de agenda, anticipos, cancelaciones, reprogramaciones y condiciones generales de servicio de Luxe Brows & Spa.",
   alternates: {
     canonical: "/politicas-de-citas",
   },
@@ -17,51 +17,65 @@ const sections = [
   {
     title: "Agenda y confirmación",
     paragraphs: [
-      "Las citas se atienden con base en disponibilidad y organización interna del negocio. La solicitud de cita por WhatsApp, redes sociales o cualquier otro medio no se considera confirmada hasta que Luxe Brows & Spa comunique expresamente la fecha y hora asignadas.",
-      "Algunos servicios pueden requerir mayor tiempo, preparación o información previa; en esos casos se informará antes de confirmar la cita.",
+      "Las citas se organizan conforme a la disponibilidad de agenda y a la operación interna de Luxe Brows & Spa. Escribir por WhatsApp, redes sociales u otro medio de contacto no confirma por sí solo una reserva.",
+      "La cita queda confirmada cuando se asigna fecha y hora y, cuando aplique, se valida el anticipo correspondiente. En algunos servicios o apartados también podremos solicitar información adicional antes de confirmar.",
     ],
   },
   {
-    title: "Puntualidad",
+    title: "Anticipo para reservar",
     paragraphs: [
-      "Para procurar una atención ordenada, se recomienda llegar puntualmente. Si hay retraso, el servicio podrá ajustarse al tiempo disponible, reprogramarse o no ser posible atenderse completo el mismo día, según la naturaleza del servicio y la agenda activa.",
+      "Para confirmar apartados en agenda, Luxe Brows & Spa podrá solicitar un anticipo de $100 MXN. Este anticipo forma parte del costo total del servicio y se registra como confirmación de la reserva cuando así se indique al momento de agendar.",
+      "El anticipo puede enviarse por transferencia o por Stripe mediante link de pago. El pago en efectivo puede utilizarse para liquidación o pago presencial, pero la reserva requiere anticipo cuando así lo establezca la agenda del negocio.",
     ],
   },
   {
     title: "Cancelaciones y reprogramaciones",
     items: [
-      "Si necesitas cambiar tu cita, lo ideal es avisar con la mayor anticipación posible por el mismo medio en que la agendaste.",
-      "Las reprogramaciones están sujetas a disponibilidad vigente al momento del cambio.",
-      "Cuando existan ausencias reiteradas, cancelaciones de último momento o apartados no respetados, Luxe Brows & Spa podrá solicitar confirmación adicional o limitar futuras reservas.",
+      "Puedes cancelar o reagendar conservando tu anticipo si avisas con al menos 12 horas de anticipación.",
+      "El anticipo permite una sola reagenda y toda reprogramación queda sujeta a disponibilidad vigente.",
+      "Si cancelas fuera del tiempo indicado, el anticipo se pierde.",
+      "Si no te presentas a tu cita (no-show), el anticipo se pierde.",
     ],
   },
   {
-    title: "Anticipos y pagos",
+    title: "Puntualidad",
     paragraphs: [
-      "Salvo que se indique expresamente al momento de agendar, la publicación de servicios en este sitio no implica por sí misma cobro anticipado ni pago en línea.",
-      "Si para algún servicio, paquete, fecha especial o apartado se solicita anticipo, monto, condiciones, aplicación, no reembolso o reprogramación, ello se informará de manera clara antes de confirmar la reserva.",
+      "Te recomendamos llegar puntualmente. Si existe retraso, el servicio podrá ajustarse al tiempo disponible, reprogramarse o no completarse el mismo día, según el tipo de servicio y la agenda activa en ese momento.",
+    ],
+  },
+  {
+    title: "Recordatorios de cita",
+    paragraphs: [
+      "Para dar seguimiento y mantener la agenda ordenada, el sistema puede enviar recordatorios automáticos de cita. De forma habitual, estos recordatorios pueden enviarse 24 horas antes y 2 horas antes del horario reservado.",
+    ],
+  },
+  {
+    title: "Especialista y atención del equipo",
+    paragraphs: [
+      "La atención puede asignarse a la especialista disponible según agenda. Algunas citas podrán ser atendidas por integrantes del equipo autorizadas por Luxe Brows & Spa.",
+      "Si en algún caso se permite elegir especialista, ello dependerá de disponibilidad real y de las condiciones internas de la agenda.",
     ],
   },
   {
     title: "Precios, promociones y disponibilidad",
     paragraphs: [
-      "Los precios, tiempos, promociones, paquetes y condiciones de servicio pueden actualizarse sin previo aviso, salvo en citas ya confirmadas bajo condiciones previamente informadas.",
-      "Toda promoción, combo o beneficio especial estará sujeto a vigencia, disponibilidad y condiciones específicas comunicadas al momento de ofrecerse.",
+      "Los precios, promociones, combos, paquetes, tiempos de servicio y disponibilidad pueden actualizarse. Sin embargo, las citas ya confirmadas respetan las condiciones informadas al momento de reservar.",
+      "Cada promoción o paquete puede tener reglas específicas de vigencia, disponibilidad, combinación o aplicación, las cuales se comunicarán cuando corresponda.",
     ],
   },
   {
-    title: "Valoración profesional y límites del servicio",
+    title: "Condiciones para prestar el servicio",
     paragraphs: [
-      "Cada servicio está sujeto a revisión al momento de la atención. Luxe Brows & Spa podrá sugerir ajustes, diferir o no realizar un servicio cuando existan condiciones que pudieran comprometer la seguridad, la higiene, el resultado esperado o la adecuada prestación.",
-      "Los resultados pueden variar de una persona a otra según características individuales, cuidados posteriores, frecuencia de mantenimiento y otros factores ajenos al control del negocio.",
+      "Cada servicio está sujeto a revisión al momento de la atención. Si existe alguna condición que pudiera afectar la seguridad, la higiene, la calidad del resultado o la adecuada prestación del servicio, Luxe Brows & Spa podrá sugerir ajustes, diferir la cita o no realizar el servicio solicitado.",
+      "Los resultados pueden variar de una persona a otra según características individuales, cuidados posteriores, frecuencia de mantenimiento y otros factores propios de cada caso.",
     ],
   },
   {
     title: "Acompañantes, menores y conducta en cabina",
     paragraphs: [
-      "Para mantener orden y comodidad en cabina, el acceso de acompañantes podrá limitarse según el espacio, el tipo de servicio y la operación del momento.",
-      "Cuando el servicio involucre a personas menores de edad o situaciones que requieran autorización adicional, el negocio podrá solicitar presencia o confirmación de madre, padre o tutor.",
-      "Luxe Brows & Spa podrá negar o suspender la atención cuando existan conductas agresivas, irrespetuosas, riesgos sanitarios, incumplimientos reiterados o situaciones que afecten la operación y seguridad del espacio.",
+      "Para mantener una atención ordenada y cómoda, se pueden limitar acompañantes según el espacio, el tipo de servicio y la operación del momento.",
+      "No se recomienda asistir con niños cuando ello pueda afectar el tiempo, la concentración o el desarrollo adecuado de la atención.",
+      "Luxe Brows & Spa podrá negar o suspender el servicio ante conductas agresivas, incumplimientos reiterados, riesgos sanitarios o cualquier situación que afecte la operación, la seguridad o la experiencia dentro del espacio.",
     ],
   },
   {

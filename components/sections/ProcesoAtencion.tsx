@@ -7,23 +7,23 @@ export function ProcesoAtencion() {
   const pasos = [
     {
       number: '1',
-      title: 'Contacto por WhatsApp',
-      desc: 'Resolución de dudas iniciales y agenda de cita.'
+      title: 'Escríbenos por WhatsApp',
+      desc: 'Cuéntanos qué buscas — resolvemos dudas y encontramos el horario que te acomoda.'
     },
     {
       number: '2',
-      title: 'Elegimos tu servicio',
-      desc: 'Te orientamos según lo que buscas y lo que mejor te funciona.'
+      title: 'Elegimos juntas',
+      desc: 'Te ayudamos a elegir el servicio que mejor va con tu estilo, expectativas y presupuesto.'
     },
     {
       number: '3',
-      title: 'Servicio',
-      desc: 'Atención meticulosa y con altos estándares de higiene.'
+      title: 'Tu cita',
+      desc: 'Cada servicio se realiza con tiempo, cuidado e higiene que se notan desde que entras.'
     },
     {
       number: '4',
-      title: 'Cuidados posteriores',
-      desc: 'Te compartimos recomendaciones para mantener tu resultado.'
+      title: 'Tu resultado, duradero',
+      desc: 'Te explicamos cómo cuidarlo para que dure lo más posible.'
     }
   ];
 
@@ -32,10 +32,10 @@ export function ProcesoAtencion() {
       <div className="container mx-auto px-6 md:px-12 relative z-10 text-center">
         <div className="mx-auto mb-5 h-px w-24 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
         <h2 className="font-serif text-3xl md:text-5xl font-medium text-white mb-6">
-          Así es tu <span className="text-luxe-gray italic">experiencia</span>
+          Reservar es fácil. <span className="text-luxe-gray italic">Verte bien, también.</span>
         </h2>
         <p className="text-luxe-light-gray text-lg max-w-2xl mx-auto mb-16">
-          Después de elegir tu servicio, te acompañamos paso a paso para que todo se sienta claro desde el inicio.
+          Cuatro pasos desde que nos escribes hasta que sales con tu resultado.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-4 max-w-6xl mx-auto mb-16">

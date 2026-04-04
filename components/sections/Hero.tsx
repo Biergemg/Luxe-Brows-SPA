@@ -24,12 +24,12 @@ export function Hero() {
         </div>
 
         <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-medium tracking-tight text-white max-w-5xl mb-6 md:mb-8 text-border-glow leading-[1.1]">
-          Un espacio para <br className="hidden md:block" />
-          <span className="text-luxe-gray italic pr-4">cuidarte y verte bien</span>
+          Tu mirada, bien cuidada. <br className="hidden md:block" />
+          <span className="text-luxe-gray italic pr-4">Tu piel, también.</span>
         </h1>
 
         <p className="max-w-3xl text-base md:text-xl text-luxe-light-gray font-light leading-relaxed mb-10 md:mb-12">
-          Cejas, pestañas y faciales en un espacio pensado para que tu cita se sienta tranquila, cuidada y acorde a lo que te gusta.
+          Cejas, pestañas y faciales con diseño personalizado, higiene impecable y atención directa por WhatsApp desde el primer mensaje.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">

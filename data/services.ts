@@ -4,7 +4,7 @@ export const serviceCategories: ServiceCategory[] = [
   {
     id: "cejas",
     title: "Cejas",
-    description: "Diseño, pigmentación y laminación para una mirada bien definida y cuidada.",
+    description: "Cejas definidas, naturales o llenas — según tu estilo y la forma de tu rostro.",
     iconName: "Eye",
     imagePath: "/images/mirada-luxe.webp",
     services: [
@@ -19,7 +19,7 @@ export const serviceCategories: ServiceCategory[] = [
   {
     id: "combos",
     title: "Combos y simultáneos",
-    description: "Combinaciones pensadas para aprovechar tu cita y salir con una mirada completa.",
+    description: "Más resultados en una sola cita. Elige tu combinación y sal con la mirada completa.",
     iconName: "Sparkles",
     imagePath: "/images/gallery-3.webp",
     services: [
@@ -33,7 +33,7 @@ export const serviceCategories: ServiceCategory[] = [
   {
     id: "cara",
     title: "Cara",
-    description: "Protocolos faciales con aparatología y cuidado profundo para limpieza, hidratación y regeneración.",
+    description: "Limpieza profunda, hidratación y tecnología estética para una piel que luce diferente desde la primera sesión.",
     iconName: "Activity",
     imagePath: "/images/skin-tech.webp",
     services: [
@@ -46,7 +46,7 @@ export const serviceCategories: ServiceCategory[] = [
   {
     id: "cuerpo",
     title: "Cuerpo",
-    description: "Servicios corporales para mantenimiento, limpieza y trabajo localizado según tu objetivo.",
+    description: "Tratamientos pensados para tu objetivo — reducción, limpieza o mantenimiento — sesión a sesión.",
     iconName: "Activity",
     imagePath: "/images/body-sculpt.webp",
     services: [
@@ -57,7 +57,7 @@ export const serviceCategories: ServiceCategory[] = [
   {
     id: "epilacion-facial",
     title: "Epilaciones faciales",
-    description: "Depilación con cera para zonas específicas del rostro.",
+    description: "Acabado limpio y preciso en cada zona del rostro.",
     iconName: "Sparkles",
     imagePath: "/images/gallery-1.webp",
     services: [
@@ -70,7 +70,7 @@ export const serviceCategories: ServiceCategory[] = [
   {
     id: "epilacion-corporal",
     title: "Epilaciones corporales",
-    description: "Opciones de depilación corporal con cera para distintas zonas.",
+    description: "Piel suave sin el esfuerzo. Distintas zonas, cera profesional, resultado limpio.",
     iconName: "Sparkles",
     imagePath: "/images/spa-ambient.webp",
     services: [

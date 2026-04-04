@@ -4,17 +4,17 @@ export const faqs: FAQ[] = [
   {
     id: "servicio-ideal",
     question: "¿Cómo sé qué servicio me conviene más?",
-    answer: "Si no tienes claro qué agendar, puedes escribirnos por WhatsApp. Ahí te orientamos según lo que buscas, el estilo que te gusta y el tipo de servicio que necesitas."
+    answer: "Escríbenos por WhatsApp y cuéntanos qué buscas — te orientamos según tu estilo, expectativas y lo que mejor te funciona."
   },
   {
     id: "duracion",
     question: "¿Cuánto tiempo dura una cita?",
-    answer: "Depende del servicio. Hay citas más rápidas, como mantenimiento o diseño, y otras que requieren más tiempo, como aplicaciones completas o faciales. Al escribirnos te compartimos la duración aproximada."
+    answer: "Depende del servicio. Hay citas rápidas como diseño o mantenimiento, y otras más largas como faciales o aplicaciones completas. Al agendar te confirmamos la duración para que organices bien tu tiempo."
   },
   {
     id: "higiene",
     question: "¿Cómo cuidan la higiene en cada servicio?",
-    answer: "Trabajamos con limpieza, orden y cuidado en cabina. Preparamos el espacio para cada cita y procuramos que cada servicio se realice de forma cómoda y cuidadosa."
+    answer: "Preparamos la cabina para cada servicio: superficies limpias, materiales desechables donde aplica y protocolo de higiene entre citas. Puedes llegar con confianza."
   },
   {
     id: "preparacion",

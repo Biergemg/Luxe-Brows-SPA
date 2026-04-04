@@ -16,11 +16,11 @@ export function CTAFinal() {
           <div className="w-full lg:w-1/2 relative z-10">
             <div className="section-kicker mb-5">Agenda por WhatsApp</div>
             <h2 className="font-serif text-3xl md:text-5xl font-medium text-white mb-6 leading-tight">
-              Agenda <br />
-              <span className="text-luxe-gray italic">tu cita</span>
+              Tu próxima cita está <br />
+              <span className="text-luxe-gray italic">a un mensaje.</span>
             </h2>
             <p className="text-luxe-light-gray text-lg mb-10 leading-relaxed">
-              Si ya sabes qué servicio te gustaría o quieres orientación, puedes escribirnos por WhatsApp y con gusto te compartimos opciones y disponibilidad.
+              ¿Ya sabes qué quieres? Escríbenos. ¿No estás segura? También — te orientamos y encontramos el servicio que mejor te funciona.
             </p>
             <Button size="lg" className="w-full sm:w-auto" asChild>
               <a href={generateWhatsAppLink(whatsappMessages.booking)} target="_blank" rel="noopener noreferrer">
@@ -33,9 +33,9 @@ export function CTAFinal() {
             <div className="rounded-[28px] border border-white/8 bg-black/40 p-6 shadow-xl backdrop-blur-md">
               <h4 className="mb-4 text-xl font-medium text-white">Antes de tu cita</h4>
               <ul className="space-y-4 text-sm text-luxe-light-gray">
-                <li>• Cuéntanos qué servicio te interesa o qué te gustaría hacer.</li>
-                <li>• Te compartimos disponibilidad, tiempos y recomendaciones básicas.</li>
-                <li>• Si te acomoda, confirmamos tu cita por WhatsApp.</li>
+                <li>• Cuéntanos qué buscas — puedes tener todo claro o venir con dudas.</li>
+                <li>• Te respondemos con disponibilidad, duración y lo que necesitas saber antes de llegar.</li>
+                <li>• Cuando todo esté claro, confirmamos tu cita — así de sencillo.</li>
               </ul>
             </div>
           </div>
