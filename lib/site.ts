@@ -5,11 +5,11 @@ export const siteConfig = {
   shortName: "Luxe",
   locale: "es_MX",
   description:
-    "Cejas, pestañas, faciales y cuidado personal en Plaza LA FÉ, Ciudad Madero. Consulta servicios y agenda tu cita por WhatsApp.",
+    "Cejas, pestañas y faciales en Plaza LA FÉ, Ciudad Madero. Diseño personalizado, higiene impecable y agenda rápida por WhatsApp.",
   title: "Luxe Brows & Spa | Cejas, pestañas y faciales en Ciudad Madero",
   socialTitle: "Luxe Brows & Spa | Cejas, pestañas y faciales en Ciudad Madero",
   socialDescription:
-    "Servicios de cejas, pestañas y faciales en Plaza LA FÉ. Agenda por WhatsApp y consulta disponibilidad, precios y ubicación.",
+    "Agenda cejas, pestañas y faciales en Ciudad Madero. Revisa servicios, precios, ubicación y reserva por WhatsApp.",
   ogImage: {
     path: "/images/share/og-hero.jpg",
     width: 1200,
@@ -27,7 +27,12 @@ export const siteConfig = {
     "pestañas ciudad madero",
     "faciales ciudad madero",
     "spa ciudad madero",
+    "cejas plaza la fe",
+    "faciales plaza la fe",
     "diseño de cejas ciudad madero",
+    "laminado de cejas ciudad madero",
+    "lash lift ciudad madero",
+    "hydrafacial ciudad madero",
     "lash lift",
     "laminado de cejas",
     "hydrafacial",
@@ -44,6 +49,6 @@ export const whatsappMessages = {
     `Hola, me gustaría recibir información sobre ${serviceName} y agendar una cita en Luxe Brows & Spa.`,
   location:
     "Hola, quiero ubicar fácilmente la sucursal en Plaza LA FÉ. ¿Me apoyan con la dirección?",
-  booking: "Hola, deseo agendar mi cita por WhatsApp.",
+  booking: "Hola, quiero agendar mi cita por WhatsApp. ¿Qué horarios tienen disponibles?",
   faq: "Hola, tengo una pregunta sobre sus servicios y me gustaría recibir orientación por WhatsApp.",
 } as const;

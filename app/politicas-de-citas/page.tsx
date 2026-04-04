@@ -9,6 +9,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/politicas-de-citas",
   },
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 const updatedAt = "29 de marzo de 2026";

@@ -12,7 +12,7 @@ const resolveSiteUrl = () => {
   const preview = clean(process.env.VERCEL_URL);
   if (preview) return withNoTrailingSlash(`https://${preview}`);
 
-  return "https://luxebrowsspa.com";
+  return "https://www.luxebrowsspa.com";
 };
 
 export const env = {
