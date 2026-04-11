@@ -3,7 +3,7 @@ import { FAQ } from "@/types";
 export const faqs: FAQ[] = [
   {
     id: "servicio-ideal",
-    question: "¿Cómo sé qué servicio me conviene más?",
+    question: "¿Cómo sé qué servicio me Conviene más?",
     answer: "Escríbenos por WhatsApp y cuéntanos lo qué buscas — te orientamos según tus expectativas y necesidades. Recuerda que durante tu cita realizamos una valoración personalizada si decides cambiar el tratamiento.",
   },
   {
@@ -18,7 +18,7 @@ export const faqs: FAQ[] = [
   },
   {
     id: "agenda-online",
-    question: "¿Cómo agendar en línea?",
+    question: "¿Como agendar ?",
     answer: "La forma más eficaz es en el botón de reserva, agenda disponible 24/7, selecciona el horario y tratamientos de tu preferencia. Cita confirmada en segundos. O contáctanos por WhatsApp.",
   },
   {
