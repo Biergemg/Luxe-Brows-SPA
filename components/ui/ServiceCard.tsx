@@ -18,6 +18,7 @@ const iconMap: Record<string, React.ReactNode> = {
 export function ServiceCard({ category }: { category: ServiceCategory }) {
   const icon = iconMap[category.iconName] || <Sparkles className="w-5 h-5 text-luxe-gray" />;
   const [openServiceId, setOpenServiceId] = useState<string | null>(category.services[0]?.id ?? null);
+  const compactServices = category.id === 'combos';
 
   return (
     <div className="group relative overflow-hidden rounded-[28px] luxury-panel transition-all duration-500 hover:border-luxe-gray/50 hover:shadow-[0_20px_80px_rgba(0,0,0,0.35)] flex flex-col h-full">
@@ -37,7 +38,7 @@ export function ServiceCard({ category }: { category: ServiceCategory }) {
             </div>
             <h3 className="text-2xl font-medium text-white">{category.title}</h3>
           </div>
-          <p className="text-sm text-luxe-light-gray max-w-xl">{category.description}</p>
+          <p className="text-sm text-luxe-light-gray max-w-xl whitespace-pre-line">{category.description}</p>
         </div>
       </div>
 
@@ -50,6 +51,25 @@ export function ServiceCard({ category }: { category: ServiceCategory }) {
         <div className="space-y-3 mb-8 flex-grow">
           {category.services.map((service) => {
             const isOpen = openServiceId === service.id;
+            const staticService = compactServices && !service.description && !service.note;
+
+            if (staticService) {
+              return (
+                <div
+                  key={service.id}
+                  className="rounded-2xl border border-white/6 bg-luxe-black/30 px-5 py-4 transition-all duration-300 hover:border-white/15 hover:bg-luxe-black/40"
+                >
+                  <div className="flex items-center justify-between gap-4">
+                    <span className="text-white text-sm md:text-base font-medium">{service.name}</span>
+                    {service.price ? (
+                      <span className="inline-flex items-center rounded-full border border-luxe-gray/25 bg-luxe-gray/10 px-3 py-1 text-sm font-medium text-white">
+                        {service.price}
+                      </span>
+                    ) : null}
+                  </div>
+                </div>
+              );
+            }
 
             return (
               <div
@@ -91,10 +111,10 @@ export function ServiceCard({ category }: { category: ServiceCategory }) {
                         </div>
                       )}
                       {service.description ? (
-                        <p className="text-sm leading-relaxed text-luxe-light-gray">{service.description}</p>
+                        <p className="text-sm leading-relaxed text-luxe-light-gray whitespace-pre-line">{service.description}</p>
                       ) : null}
                       {service.note && (
-                        <p className="text-xs leading-relaxed text-luxe-gray mt-3">{service.note}</p>
+                        <p className="text-xs leading-relaxed text-luxe-gray mt-3 whitespace-pre-line">{service.note}</p>
                       )}
                     </div>
                   </div>

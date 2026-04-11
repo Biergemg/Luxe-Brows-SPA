@@ -32,14 +32,14 @@ export const serviceCategories: ServiceCategory[] = [
   },
   {
     id: "facial",
-    title: "Facial",
-    description: "Transforma tu piel con tratamientos personalizados.",
+    title: "Care",
+    description: "Facial",
     iconName: "Activity",
     imagePath: "/images/skin-tech.webp",
     services: [
       { id: "dermaplaning", name: "Dermaplaning", description: "Higiene, desincrustante, dermaplaning, extracciones manuales, alta frecuencia, hidratación Caviar Q10, ultrasonido, masaje craneofacial, mascarilla hidratante, hidratación de labios y pantalla solar.", price: "$600" },
-      { id: "hydrafacial", name: "Hydrafacial", description: "Higiene, desincrustante, peeling ultrasónico, hidrodermoabrasión, extracciones manuales, alta frecuencia, hidratación Caviar, masaje craneofacial, mascarilla hidratante, terapia LED, hidratación de labios y pantalla solar.", price: "$600" },
-      { id: "microneedling", name: "Microneedling Regenerador", description: "Facial o capilar. Incluye higiene, microdermoabrasión, microneedling con ampolleta Caviar Q10/Peptiage+, masaje craneofacial, terapia LED e hidratación de labios.", price: "$700" },
+      { id: "hydrafacial", name: "Hydrafacial", description: "Higiene, desincrustante, peeling ultrasónico, hidrodermoabrasión, extracciones manuales, alta frecuencia, hidratación intensiva, masaje craneofacial, mascarilla hidratante, terapia LED, hidratación de labios y pantalla solar.", price: "$600" },
+      { id: "microneedling", name: "Microneedling Regenerador", description: "Facial o Capilar.\nIncluye higiene, microdermoabrasión, microneedling con ampolleta Caviar Q10/Peptiage+, masaje craneofacial, terapia LED e hidratación de labios.", price: "$700" },
       { id: "hifu", name: "HIFU", description: "Aparatología estética para tensar tejido, disminuir arrugas y líneas de expresión, reducir grasa localizada y mejorar la textura de la piel estimulando la producción de colágeno. Incluye limpieza de bienvenida y terapia de luz roja.", price: "$2300", note: "Áreas a tratar: cara completa, doble mentón y cuello." },
     ],
   },
