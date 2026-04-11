@@ -8,14 +8,11 @@ export function Testimonios() {
       <div className="absolute bottom-0 left-0 w-full h-[500px] bg-gradient-to-t from-luxe-gray/5 to-transparent pointer-events-none" />
 
       <div className="container mx-auto px-6 md:px-12 relative z-10">
-        <div className="flex flex-col md:flex-row items-end justify-between gap-6 mb-16">
+        <div className="mb-16">
           <div className="max-w-2xl">
             <h2 className="font-serif text-3xl md:text-5xl font-medium text-white mb-6">
               Experiencias <span className="text-luxe-gray italic">Luxe</span>
             </h2>
-            <p className="text-luxe-light-gray text-lg">
-              Después de la cita, lo que más se repite en las opiniones es el trato, la limpieza y el cuidado en cada servicio.
-            </p>
           </div>
         </div>
 

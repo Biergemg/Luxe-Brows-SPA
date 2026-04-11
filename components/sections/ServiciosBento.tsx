@@ -20,7 +20,7 @@ export function ServiciosBento() {
               Menú de <span className="text-luxe-gray italic">servicios</span>
             </h2>
             <p className="text-luxe-light-gray text-base md:text-lg leading-relaxed">
-              Explora cada categoría, revisa precios y detalles con calma. Si tienes dudas, te orientamos por WhatsApp antes de agendar.
+              Explora cada categoría y selecciona tu tratamiento ideal. Si así lo requieres, solicita asesoría por WhatsApp previo a tu reserva.
             </p>
           </div>
         </div>

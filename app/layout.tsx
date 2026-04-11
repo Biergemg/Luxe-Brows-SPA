@@ -1,7 +1,7 @@
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/sections/Navbar";
-import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
+import { FloatingReserveButton } from "@/components/ui/FloatingReserveButton";
 import { generateLocalBusinessSchema, generateFAQSchema } from "@/lib/jsonLd";
 import { metadata, viewport } from "@/lib/seo";
 import { TrackingScripts } from "@/components/integrations/TrackingScripts";
@@ -41,7 +41,7 @@ export default function RootLayout({
         <TrackingScripts />
         <Navbar />
         {children}
-        <WhatsAppButton />
+        <FloatingReserveButton />
       </body>
     </html>
   );

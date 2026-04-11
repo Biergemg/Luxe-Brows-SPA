@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from '../ui/Button';
-import { generateWhatsAppLink } from '@/lib/utils';
+import { getBookingLink } from '@/lib/utils';
 import { MapPin } from 'lucide-react';
 
 export function Hero() {
@@ -24,26 +24,40 @@ export function Hero() {
         </div>
 
         <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-medium tracking-tight text-white max-w-5xl mb-6 md:mb-8 text-border-glow leading-[1.1]">
-          Tu mirada, bien cuidada. <br className="hidden md:block" />
-          <span className="text-luxe-gray italic pr-4">Tu piel, también.</span>
+          Donde la belleza se eleva <br className="hidden md:block" />
+          <span className="text-luxe-gray italic pr-4">y la innovación comienza</span>
         </h1>
 
         <p className="max-w-3xl text-base md:text-xl text-luxe-light-gray font-light leading-relaxed mb-10 md:mb-12">
-          Cejas, pestañas y faciales con diseño personalizado, higiene impecable y atención directa por WhatsApp desde el primer mensaje.
+          Centro de cosmiatría avanzada especializado en tratamientos premium de cejas y pestañas.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-          <Button size="lg" className="w-full sm:w-[280px]" asChild>
-            <a href={generateWhatsAppLink()} target="_blank" rel="noopener noreferrer">
-              Agendar por WhatsApp
+        <div className="flex flex-col sm:flex-row sm:flex-wrap sm:justify-center gap-4 w-full sm:w-auto">
+          <Button variant="outline" size="lg" className="w-full sm:w-[240px] border-white/20 text-white hover:border-white hover:bg-white/5" asChild>
+            <a href="#servicios">
+              Menú de servicios
             </a>
           </Button>
-          <Button variant="outline" size="lg" className="w-full sm:w-[280px] border-white/20 text-white hover:border-white hover:bg-white/5" asChild>
-            <a href="#servicios">
-              Ver servicios
+          <Button variant="outline" size="lg" className="w-full sm:w-[240px] border-white/20 text-white hover:border-white hover:bg-white/5" asChild>
+            <a href="#horarios">
+              Horarios
+            </a>
+          </Button>
+          <Button variant="outline" size="lg" className="w-full sm:w-[240px] border-white/20 text-white hover:border-white hover:bg-white/5" asChild>
+            <a href="#ubicacion">
+              Ubicación
             </a>
           </Button>
         </div>
+
+        <a
+          href={getBookingLink()}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-8 text-sm tracking-[0.24em] uppercase text-luxe-light-gray transition-colors hover:text-white"
+        >
+          Reserva en línea 24/7
+        </a>
         <div className="mt-12 h-px w-full max-w-5xl bg-gradient-to-r from-transparent via-white/10 to-transparent md:mt-14" />
       </div>
     </section>

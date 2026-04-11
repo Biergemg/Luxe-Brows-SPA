@@ -104,7 +104,7 @@ export function ServiceCard({ category }: { category: ServiceCategory }) {
 
         <Button variant="outline" size="sm" className="w-full mt-auto" asChild>
           <a href={generateWhatsAppLink(whatsappMessages.service(category.title))} target="_blank" rel="noopener noreferrer">
-            Pedir cita por WhatsApp
+            Solicitar asesoría
           </a>
         </Button>
       </div>

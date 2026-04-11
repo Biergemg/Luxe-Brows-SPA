@@ -1,5 +1,5 @@
 import { clsx, type ClassValue } from "clsx";
-import { whatsappMessages } from "./site";
+import { whatsappMessages, bookingLink } from "./site";
 import { businessInfo } from "../data/businessInfo";
 
 export function cn(...inputs: ClassValue[]) {
@@ -9,4 +9,8 @@ export function cn(...inputs: ClassValue[]) {
 export function generateWhatsAppLink(message: string = whatsappMessages.general) {
   const text = encodeURIComponent(message);
   return `https://wa.me/${businessInfo.whatsapp}?text=${text}`;
+}
+
+export function getBookingLink() {
+  return bookingLink;
 }

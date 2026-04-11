@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { siteConfig } from '@/lib/site';
 import { Button } from '../ui/Button';
-import { generateWhatsAppLink } from '@/lib/utils';
+import { getBookingLink } from '@/lib/utils';
 import { Menu, X } from 'lucide-react';
 
 export function Navbar() {
@@ -54,8 +54,8 @@ export function Navbar() {
             ))}
           </ul>
           <Button size="sm" asChild>
-            <a href={generateWhatsAppLink()} target="_blank" rel="noopener noreferrer">
-              Agendar por WhatsApp
+            <a href={getBookingLink()} target="_blank" rel="noopener noreferrer">
+              Reservar ahora
             </a>
           </Button>
         </nav>
@@ -91,12 +91,12 @@ export function Navbar() {
             <li className="w-full mt-4">
               <Button size="lg" className="w-full text-lg" asChild>
                 <a
-                  href={generateWhatsAppLink()}
+                  href={getBookingLink()}
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Agendar por WhatsApp
+                  Reservar ahora
                 </a>
               </Button>
             </li>

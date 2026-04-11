@@ -2,9 +2,9 @@ import { ServiceCategory } from "@/types";
 
 export const serviceCategories: ServiceCategory[] = [
   {
-    id: "cejas",
-    title: "Cejas",
-    description: "Cejas definidas, naturales o llenas — según tu estilo y la forma de tu rostro.",
+    id: "cejas-pestanas",
+    title: "Cejas | Pestañas",
+    description: "Potencia tu mirada. Cejas y pestañas perfectas que facilitan tu rutina diaria.",
     iconName: "Eye",
     imagePath: "/images/mirada-luxe.webp",
     services: [
@@ -13,13 +13,13 @@ export const serviceCategories: ServiceCategory[] = [
       { id: "pigmentacion-cejas", name: "Pigmentación de cejas (cera)", description: "Incluye diseño con hilo y epilación con cera.", price: "$300" },
       { id: "laminacion-cejas", name: "Laminación de cejas (cera)", description: "Incluye diseño con hilo y epilación con cera.", price: "$380" },
       { id: "lash-lift", name: "Lash Lift", description: "Realce para abrir la mirada con acabado limpio.", price: "$300" },
-      { id: "combo-luxe", name: "Combo LUXE (Laminado + Tinte / Henna)", description: "Incluye laminado, color (henna o tinte), diseño con hilo y epilación con cera.", price: "$470", highlight: "Favorito" }
-    ]
+      { id: "combo-luxe", name: "Combo LUXE (Laminado + Tinte / Henna)", description: "Incluye laminado, color (henna o tinte), diseño con hilo y epilación con cera.", price: "$470", highlight: "Favorito" },
+    ],
   },
   {
     id: "combos",
-    title: "Combos y simultáneos",
-    description: "Más resultados en una sola cita. Elige tu combinación y sal con la mirada completa.",
+    title: "Combos | Simultáneos",
+    description: "Optimiza tu tiempo eligiendo tratamientos simultáneos.",
     iconName: "Sparkles",
     imagePath: "/images/gallery-3.webp",
     services: [
@@ -27,58 +27,67 @@ export const serviceCategories: ServiceCategory[] = [
       { id: "diseno-lashlift", name: "Diseño de ceja + Lash Lift", description: "Diseño de ceja con cera o hilo + lash lift.", price: "$400" },
       { id: "tinte-lashlift", name: "Tinte de ceja + Lash Lift", description: "Mirada más definida con color y levantamiento de pestaña.", price: "$580" },
       { id: "laminado-lashlift", name: "Laminado de ceja + Lash Lift", description: "Combo para ceja y pestaña en una sola cita.", price: "$650" },
-      { id: "combo-luxe-lashlift", name: "Combo LUXE + Lash Lift", description: "Laminado, color, diseño y lash lift en el mismo servicio.", price: "$700" }
-    ]
+      { id: "combo-luxe-lashlift", name: "Combo LUXE + Lash Lift", description: "Laminado, color, diseño y lash lift en el mismo servicio.", price: "$700" },
+    ],
   },
   {
-    id: "cara",
-    title: "Cara",
-    description: "Limpieza profunda, hidratación y tecnología estética para una piel que luce diferente desde la primera sesión.",
+    id: "facial-corporal",
+    title: "Facial | Corporal",
+    description: "Transforma tu piel con tratamientos personalizados. Tratamientos enfocados en tus objetivos: reducción, limpieza o mantenimiento.",
     iconName: "Activity",
     imagePath: "/images/skin-tech.webp",
     services: [
       { id: "dermaplaning", name: "Dermaplaning", description: "Higiene, desincrustante, dermaplaning, extracciones manuales, alta frecuencia, hidratación Caviar Q10, ultrasonido, masaje craneofacial, mascarilla hidratante, hidratación de labios y pantalla solar.", price: "$600" },
       { id: "hydrafacial", name: "Hydrafacial", description: "Higiene, desincrustante, peeling ultrasónico, hidrodermoabrasión, extracciones manuales, alta frecuencia, hidratación Caviar, masaje craneofacial, mascarilla hidratante, terapia LED, hidratación de labios y pantalla solar.", price: "$600" },
       { id: "microneedling", name: "Microneedling Regenerador", description: "Facial o capilar. Incluye higiene, microdermoabrasión, microneedling con ampolleta Caviar Q10/Peptiage+, masaje craneofacial, terapia LED e hidratación de labios.", price: "$700" },
-      { id: "hifu", name: "HIFU", description: "Aparatología estética para tensar tejido, disminuir arrugas y líneas de expresión, reducir grasa localizada y mejorar la textura de la piel estimulando la producción de colágeno. Incluye limpieza de bienvenida y terapia de luz roja.", price: "$2300", note: "Áreas a tratar: cara completa, doble mentón y cuello." }
-    ]
+      { id: "hifu", name: "HIFU", description: "Aparatología estética para tensar tejido, disminuir arrugas y líneas de expresión, reducir grasa localizada y mejorar la textura de la piel estimulando la producción de colágeno. Incluye limpieza de bienvenida y terapia de luz roja.", price: "$2300", note: "Áreas a tratar: cara completa, doble mentón y cuello." },
+      { id: "body-sculpt", name: "Body Sculpt | Corporal Personalizado", description: "Sesión enfocada a reafirmar, reducir y moldear el área de tu elección.", price: "$450", note: "3 sesiones $1200 · 5 sesiones $1900 · 10 sesiones $3700" },
+      { id: "gluteos-espalda", name: "Limpieza de glúteos / espalda", description: "Higiene, microdermoabrasión, extracciones manuales, alta frecuencia, mascarilla purificante, hidratación y pantalla solar.", price: "$480" },
+    ],
   },
   {
-    id: "cuerpo",
-    title: "Cuerpo",
-    description: "Tratamientos pensados para tu objetivo — reducción, limpieza o mantenimiento — sesión a sesión.",
-    iconName: "Activity",
-    imagePath: "/images/body-sculpt.webp",
-    services: [
-      { id: "reductivo", name: "Reductivo personalizado", description: "Técnicas combinadas personalizadas a tus necesidades en cada sesión.", price: "$450", note: "3 sesiones $1200 · 5 sesiones $1900 · 10 sesiones $3700" },
-      { id: "gluteos-espalda", name: "Limpieza de glúteos / espalda", description: "Higiene, microdermoabrasión, extracciones manuales, alta frecuencia, mascarilla purificante, hidratación y pantalla solar.", price: "$480" }
-    ]
-  },
-  {
-    id: "epilacion-facial",
-    title: "Epilaciones faciales",
-    description: "Acabado limpio y preciso en cada zona del rostro.",
+    id: "epilaciones",
+    title: "Epilaciones",
+    description: "Piel suave al instante, elimina el vello desde raíz y olvídate del rastrillo por semanas.",
     iconName: "Sparkles",
-    imagePath: "/images/gallery-1.webp",
+    imagePath: "/images/spa-ambient.webp",
     services: [
       { id: "bozo", name: "Bozo", description: "Epilación facial con cera.", price: "$60" },
       { id: "frente", name: "Frente", description: "Epilación facial con cera.", price: "$90" },
       { id: "barbilla", name: "Barbilla", description: "Epilación facial con cera.", price: "$60" },
-      { id: "patilla", name: "Patilla", description: "Epilación facial con cera.", price: "$90" }
-    ]
-  },
-  {
-    id: "epilacion-corporal",
-    title: "Epilaciones corporales",
-    description: "Piel suave sin el esfuerzo. Distintas zonas, cera profesional, resultado limpio.",
-    iconName: "Sparkles",
-    imagePath: "/images/spa-ambient.webp",
-    services: [
+      { id: "patilla", name: "Patilla", description: "Epilación facial con cera.", price: "$90" },
       { id: "axilas", name: "Axilas", description: "Epilación corporal con cera.", price: "$150" },
       { id: "medias-piernas", name: "Medias piernas", description: "Epilación corporal con cera.", price: "$300" },
       { id: "piernas-completas", name: "Piernas completas", description: "Epilación corporal con cera.", price: "$480" },
       { id: "brazos-completos", name: "Brazos completos", description: "Epilación corporal con cera.", price: "$250" },
-      { id: "medios-brazos", name: "Medios brazos", description: "Epilación corporal con cera.", price: "$170" }
-    ]
-  }
+      { id: "medios-brazos", name: "Medios brazos", description: "Epilación corporal con cera.", price: "$170" },
+    ],
+  },
+  {
+    id: "capilar",
+    title: "Capilar",
+    description: "Protocolos capilares para hidratar, reestructurar y devolver brillo con diagnóstico profesional en cabina.",
+    iconName: "Activity",
+    imagePath: "/images/body-sculpt.webp",
+    services: [
+      {
+        id: "hair-reset",
+        name: "Hair Reset",
+        description: "Tratamiento hidratante en cabina con corte bordado. Incluye diagnóstico con analizador digital, alta frecuencia, estilizado, corte bordado y crioterapia.",
+        note: "Largo extra a cotizar a partir de media espalda.",
+      },
+      {
+        id: "botox-capilar",
+        name: "Botox Capilar",
+        description: "Reestructura e hidrata la fibra capilar. Brillo y suavidad hasta por 4 meses. Incluye diagnóstico con analizador digital, alta frecuencia y crioterapia.",
+        note: "Largo extra a cotizar a partir de media espalda.",
+      },
+      {
+        id: "taninoplastia",
+        name: "Taninoplastía",
+        description: "Lacio y brillo sin igual hasta por 6 meses, apto en cabellos procesados, decolorados, niñas y embarazadas. Incluye diagnóstico con analizador digital, alta frecuencia y crioterapia.",
+        note: "Largo extra a cotizar a partir de media espalda.",
+      },
+    ],
+  },
 ];

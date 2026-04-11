@@ -2,9 +2,8 @@ import React from 'react';
 import { businessInfo } from '@/data/businessInfo';
 import { MapPin, Clock, Car, ExternalLink } from 'lucide-react';
 import { Button } from '../ui/Button';
-import { generateWhatsAppLink } from '@/lib/utils';
+import { getBookingLink } from '@/lib/utils';
 import { getGoogleMapsEmbedUrl, getGoogleMapsUrl } from '@/lib/maps';
-import { whatsappMessages } from '@/lib/site';
 
 const mapEmbedSrc = getGoogleMapsEmbedUrl();
 const mapsUrl = getGoogleMapsUrl();
@@ -15,13 +14,10 @@ export function UbicacionFacilidades() {
       <div className="container mx-auto px-6 md:px-12 relative z-10">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-24">
           <div className="w-full lg:w-1/2">
-            <h2 className="font-serif text-3xl md:text-5xl font-medium text-white mb-6">
+            <h2 className="font-serif text-3xl md:text-5xl font-medium text-white mb-10">
               Ubicación <br />
               <span className="text-luxe-gray italic">exacta y fácil de encontrar</span>
             </h2>
-            <p className="text-luxe-light-gray text-lg mb-10">
-              Cuando estés lista para venir, aquí encuentras la dirección completa y un acceso directo al mapa para llegar con facilidad.
-            </p>
 
             <div className="space-y-8 mb-10">
               <div className="flex gap-4">
@@ -37,12 +33,12 @@ export function UbicacionFacilidades() {
                 </div>
               </div>
 
-              <div className="flex gap-4">
+              <div id="horarios" className="flex gap-4 scroll-mt-20">
                 <div className="mt-1">
                   <Clock className="w-6 h-6 text-luxe-gray" />
                 </div>
                 <div>
-                  <h4 className="text-white font-medium mb-1">Horarios de Atención</h4>
+                  <h4 className="text-white font-medium mb-1">Horarios</h4>
                   <p className="text-luxe-light-gray">Lunes a sábado: 9:00 - 18:00</p>
                   <p className="text-luxe-light-gray">Domingo: Cerrado</p>
                 </div>
@@ -66,8 +62,8 @@ export function UbicacionFacilidades() {
                 </a>
               </Button>
               <Button variant="outline" size="lg" className="w-full sm:w-auto" asChild>
-                <a href={generateWhatsAppLink(whatsappMessages.location)} target="_blank" rel="noopener noreferrer">
-                  Pedir ubicación por WhatsApp
+                <a href={getBookingLink()} target="_blank" rel="noopener noreferrer">
+                  Reservar cita
                 </a>
               </Button>
             </div>
