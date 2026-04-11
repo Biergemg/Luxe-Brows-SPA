@@ -32,11 +32,12 @@ export const serviceCategories: ServiceCategory[] = [
   },
   {
     id: "facial",
-    title: "Care",
-    description: "Facial",
+    title: "Facial",
+    description: "Transforma tu piel con tratamientos personalizados.",
     iconName: "Activity",
     imagePath: "/images/skin-tech.webp",
     services: [
+      { id: "limpieza-facial-profunda", name: "Limpieza Facial Profunda", description: "Higiene, Desincrustante, Peeling Ultrasónico, Extracciones manuales, Microdermoabrasión, Alta Frecuencia, Hidratación Caviar Q10 / Control Acné, Masaje Craneofacial, Mascarilla personalizada, Hidratación de Labios, Pantalla solar.", price: "$500" },
       { id: "dermaplaning", name: "Dermaplaning", description: "Higiene, desincrustante, dermaplaning, extracciones manuales, alta frecuencia, hidratación Caviar Q10, ultrasonido, masaje craneofacial, mascarilla hidratante, hidratación de labios y pantalla solar.", price: "$600" },
       { id: "hydrafacial", name: "Hydrafacial", description: "Higiene, desincrustante, peeling ultrasónico, hidrodermoabrasión, extracciones manuales, alta frecuencia, hidratación intensiva, masaje craneofacial, mascarilla hidratante, terapia LED, hidratación de labios y pantalla solar.", price: "$600" },
       { id: "microneedling", name: "Microneedling Regenerador", description: "Facial o Capilar.\nIncluye higiene, microdermoabrasión, microneedling con ampolleta Caviar Q10/Peptiage+, masaje craneofacial, terapia LED e hidratación de labios.", price: "$700" },
