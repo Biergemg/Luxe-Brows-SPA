@@ -78,7 +78,7 @@ export const serviceCategories: ServiceCategory[] = [
     title: "Capilar",
     description: "Protocolos capilares para hidratar, reestructurar y devolver brillo con diagnóstico profesional en cabina.",
     iconName: "Activity",
-    imagePath: "/images/body-sculpt.webp",
+    imagePath: "/images/capilar-luxe.webp",
     services: [
       {
         id: "hair-reset",
