@@ -7,13 +7,12 @@ export function Hero() {
   return (
     <section className="relative min-h-[88svh] md:min-h-[92svh] flex items-center justify-center overflow-hidden bg-luxe-black" aria-label="Introducción">
       <div className="absolute inset-0 w-full h-full z-0">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-50 mix-blend-luminosity scale-105 animate-[pulse_20s_ease-in-out_infinite_alternate]"
-          style={{ backgroundImage: 'url(/images/hero-bg.webp)' }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-luxe-black/40 via-luxe-black/60 to-luxe-black" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,#000000_100%)] opacity-80" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.06),transparent_34%),radial-gradient(circle_at_bottom_right,rgba(164,119,100,0.13),transparent_24%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_28%),radial-gradient(circle_at_20%_30%,rgba(164,119,100,0.14),transparent_28%),radial-gradient(circle_at_80%_70%,rgba(255,255,255,0.05),transparent_22%),linear-gradient(180deg,#060606_0%,#0b0b0b_38%,#050505_100%)]" />
+        <div className="absolute inset-0 opacity-[0.07] bg-[linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[size:72px_72px]" />
+        <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-white/6 to-transparent" />
+        <div className="absolute left-1/2 top-[18%] h-[340px] w-[340px] -translate-x-1/2 rounded-full bg-luxe-gray/10 blur-[120px]" />
+        <div className="absolute -left-24 bottom-0 h-[280px] w-[280px] rounded-full bg-white/[0.04] blur-[120px]" />
+        <div className="absolute -right-16 top-24 h-[240px] w-[240px] rounded-full bg-luxe-gray/10 blur-[110px]" />
         <div className="grain-overlay" />
       </div>
 

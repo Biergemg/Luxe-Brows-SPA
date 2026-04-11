@@ -8,12 +8,12 @@ export const serviceCategories: ServiceCategory[] = [
     iconName: "Eye",
     imagePath: "/images/mirada-luxe.webp",
     services: [
-      { id: "ceja-cera", name: "Diseño de ceja", description: "Mapping personalizado con hilo y epilación con cera. Cambia a hilo +$70.", price: "$150" },
+      { id: "ceja-cera", name: "Diseño de ceja", description: "Mapping personalizado con hilo y epilación con cera | Cambia a hilo +$70", price: "$150" },
       
-      { id: "pigmentacion-cejas", name: "Pigmentación de Ceja", description: "Color personalizado. Incluye mapping y epilación con cera. Cambia a hilo +$70.", price: "$300" },
-      { id: "laminacion-cejas", name: "Laminación de ceja", description: "Incluye mapping y epilación con cera. Cambia a hilo +$70.", price: "$380" },
+      { id: "pigmentacion-cejas", name: "Pigmentación de Ceja", description: "Tono personalizado. Incluye mapping y epilación con cera | Cambia a hilo +$70", price: "$300" },
+      { id: "laminacion-cejas", name: "Laminación de ceja", description: "Incluye mapping y epilación con cera | Cambia a hilo +$70", price: "$380" },
       { id: "lash-lift", name: "Lash Lift", description: "Técnica Coreana Fusión. Incluye tinturado negro intenso.", price: "$300" },
-      { id: "combo-luxe", name: "Combo Luxe | Full Brows", description: "Laminación + Pigmento. Incluye mapping y epilación con cera. Cambia a hilo +$70.", price: "$470", highlight: "Favorito" },
+      { id: "combo-luxe", name: "Combo Luxe | Full Brows", description: "Laminación + Pigmento. Incluye mapping y epilación con cera | Cambia a hilo +$70", price: "$470", highlight: "Favorito" },
     ],
   },
   {
