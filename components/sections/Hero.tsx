@@ -50,14 +50,11 @@ export function Hero() {
           </Button>
         </div>
 
-        <a
-          href={getBookingLink()}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-8 text-sm tracking-[0.24em] uppercase text-luxe-light-gray transition-colors hover:text-white"
-        >
-          Reserva en línea 24/7
-        </a>
+        <Button variant="outline" size="lg" className="mt-8 w-full sm:w-[240px] border-white/20 text-white hover:border-white hover:bg-white/5" asChild>
+          <a href={getBookingLink()} target="_blank" rel="noopener noreferrer">
+            Reserva en Línea
+          </a>
+        </Button>
         <div className="mt-12 h-px w-full max-w-5xl bg-gradient-to-r from-transparent via-white/10 to-transparent md:mt-14" />
       </div>
     </section>

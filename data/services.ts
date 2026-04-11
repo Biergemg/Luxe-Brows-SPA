@@ -9,7 +9,7 @@ export const serviceCategories: ServiceCategory[] = [
     imagePath: "/images/mirada-luxe.webp",
     services: [
       { id: "ceja-cera", name: "Diseño de ceja (cera)", description: "Diseño con hilo y epilación con cera.", price: "$150" },
-      { id: "ceja-hilo", name: "Diseño de ceja (hilo)", description: "Definición precisa para perfilar tu ceja.", price: "$220" },
+      { id: "ceja-hilo", name: "Diseño de ceja (hilo)", description: "Diseño y epilación con hilo.", price: "$220" },
       { id: "pigmentacion-cejas", name: "Pigmentación de cejas (cera)", description: "Incluye diseño con hilo y epilación con cera.", price: "$300" },
       { id: "laminacion-cejas", name: "Laminación de cejas (cera)", description: "Incluye diseño con hilo y epilación con cera.", price: "$380" },
       { id: "lash-lift", name: "Lash Lift", description: "Realce para abrir la mirada con acabado limpio.", price: "$300" },
@@ -31,9 +31,9 @@ export const serviceCategories: ServiceCategory[] = [
     ],
   },
   {
-    id: "facial-corporal",
-    title: "Facial | Corporal",
-    description: "Transforma tu piel con tratamientos personalizados. Tratamientos enfocados en tus objetivos: reducción, limpieza o mantenimiento.",
+    id: "facial",
+    title: "Facial",
+    description: "Transforma tu piel con tratamientos personalizados.",
     iconName: "Activity",
     imagePath: "/images/skin-tech.webp",
     services: [
@@ -41,6 +41,15 @@ export const serviceCategories: ServiceCategory[] = [
       { id: "hydrafacial", name: "Hydrafacial", description: "Higiene, desincrustante, peeling ultrasónico, hidrodermoabrasión, extracciones manuales, alta frecuencia, hidratación Caviar, masaje craneofacial, mascarilla hidratante, terapia LED, hidratación de labios y pantalla solar.", price: "$600" },
       { id: "microneedling", name: "Microneedling Regenerador", description: "Facial o capilar. Incluye higiene, microdermoabrasión, microneedling con ampolleta Caviar Q10/Peptiage+, masaje craneofacial, terapia LED e hidratación de labios.", price: "$700" },
       { id: "hifu", name: "HIFU", description: "Aparatología estética para tensar tejido, disminuir arrugas y líneas de expresión, reducir grasa localizada y mejorar la textura de la piel estimulando la producción de colágeno. Incluye limpieza de bienvenida y terapia de luz roja.", price: "$2300", note: "Áreas a tratar: cara completa, doble mentón y cuello." },
+    ],
+  },
+  {
+    id: "corporales",
+    title: "Corporales",
+    description: "Tratamientos enfocados en tus objetivos: reducción, limpieza o mantenimiento.",
+    iconName: "Activity",
+    imagePath: "/images/body-sculpt.webp",
+    services: [
       { id: "body-sculpt", name: "Body Sculpt | Corporal Personalizado", description: "Sesión enfocada a reafirmar, reducir y moldear el área de tu elección.", price: "$450", note: "3 sesiones $1200 · 5 sesiones $1900 · 10 sesiones $3700" },
       { id: "gluteos-espalda", name: "Limpieza de glúteos / espalda", description: "Higiene, microdermoabrasión, extracciones manuales, alta frecuencia, mascarilla purificante, hidratación y pantalla solar.", price: "$480" },
     ],

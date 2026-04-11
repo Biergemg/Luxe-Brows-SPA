@@ -39,7 +39,7 @@ export function Footer() {
               />
             </a>
             <p className="text-sm text-luxe-light-gray leading-relaxed mb-6">
-              Cejas · Pestañas · Faciales · Cuerpo
+              Cejas · Pestañas · Faciales · Corporales
               <br />
               Plaza LA FÉ · Local 1
             </p>
