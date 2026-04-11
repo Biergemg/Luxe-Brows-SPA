@@ -90,7 +90,9 @@ export function ServiceCard({ category }: { category: ServiceCategory }) {
                           {service.price}
                         </div>
                       )}
-                      <p className="text-sm leading-relaxed text-luxe-light-gray">{service.description}</p>
+                      {service.description ? (
+                        <p className="text-sm leading-relaxed text-luxe-light-gray">{service.description}</p>
+                      ) : null}
                       {service.note && (
                         <p className="text-xs leading-relaxed text-luxe-gray mt-3">{service.note}</p>
                       )}

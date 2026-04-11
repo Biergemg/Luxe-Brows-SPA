@@ -23,11 +23,11 @@ export const serviceCategories: ServiceCategory[] = [
     iconName: "Sparkles",
     imagePath: "/images/gallery-3.webp",
     services: [
-      { id: "diseno-bozo", name: "Diseño de ceja + Bozo", description: "Servicio combinado para perfilar y limpiar la zona superior del labio.", price: "$200" },
-      { id: "diseno-lashlift", name: "Diseño de ceja + Lash Lift", description: "Diseño de ceja con cera o hilo + lash lift.", price: "$400" },
-      { id: "tinte-lashlift", name: "Tinte de ceja + Lash Lift", description: "Mirada más definida con color y levantamiento de pestaña.", price: "$580" },
-      { id: "laminado-lashlift", name: "Laminado de ceja + Lash Lift", description: "Combo para ceja y pestaña en una sola cita.", price: "$650" },
-      { id: "combo-luxe-lashlift", name: "Combo LUXE + Lash Lift", description: "Laminado, color, diseño y lash lift en el mismo servicio.", price: "$700" },
+      { id: "diseno-bozo", name: "Diseño de ceja + Epilación de Bozo", description: "", price: "$200" },
+      { id: "diseno-lashlift", name: "Diseño de ceja + Lash Lift", description: "", price: "$400" },
+      { id: "tinte-lashlift", name: "Tinte de ceja + Lash Lift", description: "", price: "$580" },
+      { id: "laminado-lashlift", name: "Laminado de ceja + Lash Lift", description: "", price: "$650" },
+      { id: "combo-luxe-lashlift", name: "Combo LUXE + Lash Lift", description: "", price: "$700" },
     ],
   },
   {
