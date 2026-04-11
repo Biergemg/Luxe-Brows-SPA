@@ -15,8 +15,7 @@ export function UbicacionFacilidades() {
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-24">
           <div className="w-full lg:w-1/2">
             <h2 className="font-serif text-3xl md:text-5xl font-medium text-white mb-10">
-              Ubicación <br />
-              <span className="text-luxe-gray italic">exacta y fácil de encontrar</span>
+              Ubicación
             </h2>
 
             <div className="space-y-8 mb-10">
