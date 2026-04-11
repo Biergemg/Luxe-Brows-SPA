@@ -27,7 +27,11 @@ export function ServiceCard({ category }: { category: ServiceCategory }) {
           src={category.imagePath}
           alt={category.title}
           fill
-          className="object-cover transition-transform duration-700 group-hover:scale-105"
+          className={`object-cover transition-transform duration-700 group-hover:scale-105 ${
+            category.imagePosition === 'top' ? 'object-top' : 
+            category.imagePosition === 'bottom' ? 'object-bottom' : 
+            'object-center'
+          }`}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-luxe-black via-luxe-black/55 to-transparent opacity-90" />

@@ -14,6 +14,7 @@ export interface ServiceCategory {
   services: BaseService[];
   iconName: string;
   imagePath: string;
+  imagePosition?: string;
 }
 
 export interface Testimonial {

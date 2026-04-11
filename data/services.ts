@@ -36,6 +36,7 @@ export const serviceCategories: ServiceCategory[] = [
     description: "Transforma tu piel con tratamientos personalizados.",
     iconName: "Activity",
     imagePath: "/images/skin-tech.webp",
+    imagePosition: "top",
     services: [
       { id: "limpieza-facial-profunda", name: "Limpieza Facial Profunda", description: "Higiene, Desincrustante, Peeling Ultrasónico, Extracciones manuales, Microdermoabrasión, Alta Frecuencia, Hidratación Caviar Q10 / Control Acné, Masaje Craneofacial, Mascarilla personalizada, Hidratación de Labios, Pantalla solar.", price: "$500" },
       { id: "dermaplaning", name: "Dermaplaning", description: "Higiene, desincrustante, dermaplaning, extracciones manuales, alta frecuencia, hidratación Caviar Q10, ultrasonido, masaje craneofacial, mascarilla hidratante, hidratación de labios y pantalla solar.", price: "$600" },
