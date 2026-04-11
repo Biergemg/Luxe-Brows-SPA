@@ -48,7 +48,7 @@ export const siteConfig = {
 export const whatsappMessages = {
   general: "Hola, me gustaría recibir información y agendar una cita en Luxe Brows & Spa.",
   service: (serviceName: string) =>
-    `Hola, me gustaría recibir información sobre ${serviceName} antes de reservar en Luxe Brows & Spa.`,
+    `Hola ! Requiero información sobre ${serviceName} antes de reservar mi cita.`,
   location:
     "Hola, quiero ubicar fácilmente la sucursal en Plaza LA FÉ. ¿Me apoyan con la dirección?",
   booking: "Hola, quiero orientación antes de reservar mi cita en línea. ¿Me apoyan?",
