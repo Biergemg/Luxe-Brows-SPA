@@ -17,10 +17,7 @@ export function Hero() {
       </div>
 
       <div className="container relative z-10 mx-auto px-6 md:px-12 flex flex-col items-center text-center pt-36 pb-18 md:pt-40 md:pb-20 lg:pt-44 lg:pb-24">
-        <div className="inline-flex items-center gap-2 rounded-full border border-luxe-gray/30 bg-luxe-black/60 backdrop-blur-md px-4 py-1.5 mb-8 md:mb-12 shadow-[0_0_15px_rgba(89,89,89,0.15)]">
-          <MapPin className="h-3.5 w-3.5 text-luxe-gray" />
-          <span className="text-xs font-medium tracking-widest text-luxe-white uppercase">Plaza La Fe</span>
-        </div>
+
 
         <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-medium tracking-tight text-white max-w-5xl mb-6 md:mb-8 text-border-glow leading-[1.1]">
           Donde la belleza se eleva <br className="hidden md:block" />
