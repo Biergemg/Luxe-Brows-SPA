@@ -3,9 +3,9 @@ import { Testimonial } from "@/types";
 export const testimonials: Testimonial[] = [
   {
     id: "t1",
-    name: "Sara Daniela Moreno",
-    quote: "Me hice laminado de cejas, fue todo muy limpio y bonito el trabajo, ya he sido clienta, me gusta mucho su trabajo.",
-    service: "Laminado de cejas",
+    name: "Cliente Luxe",
+    quote: "Me encantó cómo me quedaron mis cejas y mis pestañas. Súper recomendable y la atención es muy buena; te hacen sentir en confianza desde el inicio.",
+    service: "Cejas y pestañas",
     rating: 5
   },
   {
