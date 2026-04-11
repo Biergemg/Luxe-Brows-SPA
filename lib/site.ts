@@ -9,14 +9,14 @@ export const siteConfig = {
   description:
     "Centro de cosmiatría avanzada especializado en tratamientos premium de cejas, pestañas, faciales, corporal y capilar en Plaza LA FÉ.",
   title: "Luxe Brows & Spa | Cejas, pestañas y cosmiatría avanzada",
-  socialTitle: "Luxe Brows & Spa | Cejas, pestañas y cosmiatría avanzada",
+  socialTitle: "Donde la belleza se eleva y la innovación comienza | Luxe Brows & Spa",
   socialDescription:
-    "Explora servicios, horarios y ubicación, y reserva en línea tu cita en Luxe Brows & Spa.",
+    "Centro de cosmiatría avanzada especializado en tratamientos premium de cejas y pestañas. Explora servicios, horarios y ubicación.",
   ogImage: {
     path: "/images/share/og-hero.jpg",
     width: 1200,
     height: 630,
-    alt: "Luxe Brows & Spa en Plaza LA FÉ · cejas, pestañas y cosmiatría avanzada",
+    alt: "Donde la belleza se eleva y la innovación comienza · Luxe Brows & Spa",
   },
   navLinks: [
     { label: "Servicios", href: "#servicios" },
