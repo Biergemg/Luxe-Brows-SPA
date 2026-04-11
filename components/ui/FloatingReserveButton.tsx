@@ -16,7 +16,7 @@ export function FloatingReserveButton() {
         alt="Luxe Brows & Spa"
         width={120}
         height={82}
-        className="relative z-10 h-auto w-[108px] object-contain"
+        className="relative z-10 h-auto w-[108px] object-contain invert"
         quality={100}
         unoptimized
       />
