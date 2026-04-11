@@ -51,6 +51,6 @@ export const whatsappMessages = {
     `Hola ! Requiero información sobre ${serviceName} antes de reservar mi cita.`,
   location:
     "Hola, quiero ubicar fácilmente la sucursal en Plaza LA FÉ. ¿Me apoyan con la dirección?",
-  booking: "Hola, quiero orientación antes de reservar mi cita en línea. ¿Me apoyan?",
+  booking: "Hola ! Requiero información antes de reservar mi cita.",
   faq: "Hola, tengo una pregunta sobre sus servicios y me gustaría recibir orientación por WhatsApp.",
 } as const;
