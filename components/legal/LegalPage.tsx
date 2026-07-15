@@ -17,7 +17,7 @@ type LegalPageProps = {
 
 export function LegalPage({ eyebrow, title, intro, updatedAt, sections }: LegalPageProps) {
   return (
-    <main className="bg-nude-bg pt-36 pb-20 md:pt-40 md:pb-24">
+    <main className="bg-nude-bg pt-40 pb-20 md:pt-44 md:pb-24">
       <section className="container mx-auto max-w-4xl px-6 md:px-12">
         <div className="mb-10">
           <Link
