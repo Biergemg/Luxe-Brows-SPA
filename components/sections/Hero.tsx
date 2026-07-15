@@ -12,7 +12,7 @@ export function Hero() {
       </div>
 
       <div className="container relative z-10 mx-auto px-6 md:px-12 flex flex-col lg:flex-row items-center gap-12 lg:gap-16 pt-36 pb-18 md:pt-40 md:pb-20 lg:pt-44 lg:pb-24">
-        <div className="flex flex-col items-center text-center lg:items-start lg:text-left lg:w-1/2">
+        <div className="order-2 flex flex-col items-center text-center lg:order-1 lg:items-start lg:text-left lg:w-1/2">
           <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-medium tracking-tight text-nude-text max-w-xl mb-6 leading-[1.1]">
             Donde la belleza se eleva <br className="hidden lg:block" />
             <span className="text-nude-accent italic">y la innovación comienza</span>
@@ -41,7 +41,7 @@ export function Hero() {
           </Button>
         </div>
 
-        <div className="flex w-full justify-center lg:w-1/2">
+        <div className="order-1 flex w-full justify-center lg:order-2 lg:w-1/2">
           <HeroCarousel />
         </div>
       </div>
