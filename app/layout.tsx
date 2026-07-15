@@ -36,7 +36,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${inter.variable} ${playfairDisplay.variable} antialiased bg-luxe-black text-luxe-white`}
+        className={`${inter.variable} ${playfairDisplay.variable} antialiased bg-nude-bg text-nude-text`}
       >
         <TrackingScripts />
         <Navbar />

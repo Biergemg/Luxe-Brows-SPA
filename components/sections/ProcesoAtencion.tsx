@@ -28,37 +28,37 @@ export function ProcesoAtencion() {
   ];
 
   return (
-    <section className="relative bg-luxe-black py-20 md:py-28">
+    <section className="relative bg-nude-bg py-20 md:py-28">
       <div className="container mx-auto px-6 md:px-12 relative z-10 text-center">
-        <div className="mx-auto mb-5 h-px w-24 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-        <h2 className="font-serif text-3xl md:text-5xl font-medium text-white mb-6">
-          Reservar es fácil. <span className="text-luxe-gray italic">Verte bien, también.</span>
+        <div className="mx-auto mb-5 h-px w-24 bg-gradient-to-r from-transparent via-nude-text/10 to-transparent" />
+        <h2 className="font-serif text-3xl md:text-5xl font-medium text-nude-text mb-6">
+          Reservar es fácil. <span className="text-nude-accent italic">Verte bien, también.</span>
         </h2>
-        <p className="text-luxe-light-gray text-lg max-w-2xl mx-auto mb-16">
+        <p className="text-nude-muted text-lg max-w-2xl mx-auto mb-16">
           Cuatro pasos desde que nos escribes hasta que sales con tu resultado.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-4 max-w-6xl mx-auto mb-16">
           {pasos.map((paso, idx) => (
             <div key={idx} className="relative flex flex-col items-center text-center px-4">
-              <div className="w-16 h-16 rounded-full bg-luxe-dark-gray border border-white/10 flex items-center justify-center mb-6 z-10">
-                <span className="text-luxe-gray font-serif text-2xl">{paso.number}</span>
+              <div className="w-16 h-16 rounded-full bg-nude-surface border border-nude-text/10 flex items-center justify-center mb-6 z-10">
+                <span className="text-nude-accent font-serif text-2xl">{paso.number}</span>
               </div>
 
               {idx < pasos.length - 1 && (
-                <div className="hidden md:block absolute top-8 left-1/2 w-full h-[1px] bg-gradient-to-r from-luxe-gray/50 to-transparent" />
+                <div className="hidden md:block absolute top-8 left-1/2 w-full h-[1px] bg-gradient-to-r from-nude-accent/50 to-transparent" />
               )}
 
-              <h4 className="text-white font-medium text-lg mb-3 flex items-center gap-2 justify-center">
+              <h4 className="text-nude-text font-medium text-lg mb-3 flex items-center gap-2 justify-center">
                 {paso.title}
                 {idx === 0 && <CheckCircle2 className="w-4 h-4 text-[#25D366]" />}
               </h4>
-              <p className="text-sm text-luxe-light-gray leading-relaxed">{paso.desc}</p>
+              <p className="text-sm text-nude-muted leading-relaxed">{paso.desc}</p>
             </div>
           ))}
         </div>
 
-        <Button size="lg" className="w-full sm:w-auto" asChild>
+        <Button variant="primary-nude" size="lg" className="w-full sm:w-auto" asChild>
           <a href={generateWhatsAppLink()} target="_blank" rel="noopener noreferrer">
             Agendar por WhatsApp
           </a>

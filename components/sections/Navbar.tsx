@@ -23,7 +23,7 @@ export function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 border-b ${
         isScrolled
-          ? 'bg-luxe-black/90 backdrop-blur-md border-white/10 py-3'
+          ? 'bg-nude-bg/90 backdrop-blur-md border-nude-text/10 py-3'
           : 'bg-transparent border-transparent py-5'
       }`}
     >
@@ -44,16 +44,16 @@ export function Navbar() {
         </div>
 
         <nav className="hidden md:flex items-center gap-8 min-w-0">
-          <ul className="flex items-center gap-8 text-sm font-medium text-luxe-light-gray">
+          <ul className="flex items-center gap-8 text-sm font-medium text-nude-muted">
             {siteConfig.navLinks.map((link) => (
               <li key={link.href}>
-                <a href={link.href} className="hover:text-luxe-gray transition-colors py-2 whitespace-nowrap">
+                <a href={link.href} className="hover:text-nude-accent transition-colors py-2 whitespace-nowrap">
                   {link.label}
                 </a>
               </li>
             ))}
           </ul>
-          <Button size="sm" asChild>
+          <Button variant="primary-nude" size="sm" asChild>
             <a href={getBookingLink()} target="_blank" rel="noopener noreferrer">
               Reservar ahora
             </a>
@@ -61,7 +61,7 @@ export function Navbar() {
         </nav>
 
         <button
-          className="md:hidden p-2 text-white z-50 focus:outline-none shrink-0"
+          className="md:hidden p-2 text-nude-text z-50 focus:outline-none shrink-0"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label={mobileMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
         >
@@ -69,19 +69,19 @@ export function Navbar() {
         </button>
 
         <div
-          className={`fixed inset-0 bg-luxe-black/95 backdrop-blur-lg z-40 flex flex-col items-center justify-center transition-opacity duration-300 md:hidden ${
+          className={`fixed inset-0 bg-nude-bg/95 backdrop-blur-lg z-40 flex flex-col items-center justify-center transition-opacity duration-300 md:hidden ${
             mobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
           }`}
         >
           <div className="mb-10">
             <Image src="/images/brand/logo-round.png" alt="Luxe Brows & Spa" width={224} height={224} className="h-40 w-auto" quality={100} unoptimized />
           </div>
-          <ul className="flex flex-col items-center gap-8 text-xl font-serif text-white w-full px-6">
+          <ul className="flex flex-col items-center gap-8 text-xl font-serif text-nude-text w-full px-6">
             {siteConfig.navLinks.map((link) => (
-              <li key={link.href} className="w-full text-center border-b border-white/10 pb-4">
+              <li key={link.href} className="w-full text-center border-b border-nude-text/10 pb-4">
                 <a
                   href={link.href}
-                  className="block w-full hover:text-luxe-gray transition-colors"
+                  className="block w-full hover:text-nude-accent transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {link.label}
@@ -89,7 +89,7 @@ export function Navbar() {
               </li>
             ))}
             <li className="w-full mt-4">
-              <Button size="lg" className="w-full text-lg" asChild>
+              <Button variant="primary-nude" size="lg" className="w-full text-lg" asChild>
                 <a
                   href={getBookingLink()}
                   target="_blank"
