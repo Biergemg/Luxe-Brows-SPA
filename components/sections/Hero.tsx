@@ -41,7 +41,7 @@ export function Hero() {
           </Button>
         </div>
 
-        <div className="flex justify-center lg:w-1/2">
+        <div className="flex w-full justify-center lg:w-1/2">
           <HeroCarousel />
         </div>
       </div>
