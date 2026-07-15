@@ -4,12 +4,12 @@ import { ServiceCard } from '../ui/ServiceCard';
 
 export function ServiciosBento() {
   return (
-    <section id="servicios" className="relative scroll-mt-20 bg-nude-bg py-20 md:py-28">
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-nude-text/[0.03] via-transparent to-transparent" />
+    <section id="servicios" className="relative scroll-mt-20 bg-nude-bg pt-10 pb-20 md:pt-14 md:pb-28">
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-nude-text/15 to-transparent" />
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-nude-accent/10 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="container mx-auto px-6 md:px-12 relative z-10">
-        <div className="mb-14 max-w-3xl md:mb-16">
+        <div className="mb-10 max-w-3xl md:mb-12">
           <span className="section-kicker-nude mb-5 inline-flex">Servicios</span>
           <div className="mb-6 h-px w-20 bg-gradient-to-r from-nude-accent to-transparent" />
         </div>
