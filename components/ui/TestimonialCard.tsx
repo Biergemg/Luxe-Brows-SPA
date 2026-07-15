@@ -22,7 +22,6 @@ export function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
 
       <div className="mt-auto border-t border-nude-text/10 pt-4 relative z-10">
         <p className="font-medium text-nude-text">{testimonial.name}</p>
-        <p className="text-xs text-nude-accent uppercase tracking-wider mt-1">{testimonial.service}</p>
       </div>
     </div>
   );
