@@ -57,3 +57,95 @@ details[open] .luxe-caret { transform: rotate(45deg); }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
   .luxe-marquee-track { animation: none; }
 }
+
+/* V10.1 — kinetic details: visible only when motion is permitted. */
+.luxe-carousel-control {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  color: #f5e8d7;
+  border: 1px solid rgba(221, 188, 145, .34);
+  background: rgba(255, 255, 255, .035);
+  transition: border-color .22s ease, background .22s ease, color .22s ease;
+}
+.luxe-carousel-control:hover {
+  color: #17130f;
+  border-color: #d5b184;
+  background: #d5b184;
+}
+.luxe-carousel-slide {
+  animation: luxe-carousel-enter 850ms cubic-bezier(.24,.75,.3,1) both;
+}
+.luxe-carousel-progress {
+  width: 100%;
+  transform-origin: left;
+  animation: luxe-carousel-fill linear both;
+}
+@keyframes luxe-carousel-enter {
+  from { opacity: .28; transform: scale(1.055); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes luxe-carousel-fill {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+.luxe-editorial-panel {
+  isolation: isolate;
+  position: relative;
+  overflow: hidden;
+}
+.luxe-editorial-panel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,.09) 50%, transparent 70%);
+  transform: translateX(-45%);
+  transition: transform 850ms ease, opacity 650ms ease;
+}
+.luxe-editorial-panel:hover::after {
+  opacity: 1;
+  transform: translateX(50%);
+}
+.luxe-gold-line {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(90deg, transparent, rgba(195,158,113,.9), transparent);
+}
+.luxe-micro-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+}
+.luxe-scroll-progress {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #856443, #dfbe91);
+  transform-origin: left center;
+  transform: scaleX(0);
+}
+@supports (animation-timeline: scroll()) {
+  .luxe-scroll-progress {
+    animation: luxe-scroll-track linear both;
+    animation-timeline: scroll(root block);
+  }
+}
+@keyframes luxe-scroll-track {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .luxe-carousel-slide, .luxe-carousel-progress, .luxe-scroll-progress {
+    animation: none !important;
+    transform: none !important;
+  }
+  .luxe-editorial-panel::after { display: none; }
+}

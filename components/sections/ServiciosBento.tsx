@@ -34,7 +34,7 @@ export function ServiciosBento() {
           </div>
         </div>
         <div className="grid min-w-0 grid-cols-[minmax(0,1fr)] gap-8 xl:grid-cols-[.37fr_.63fr] xl:gap-14">
-          <div data-reveal className="min-w-0">
+          <div data-reveal className="min-w-0 xl:sticky xl:top-36 xl:self-start">
             <div role="tablist" aria-label="Categorías de servicios" aria-orientation="horizontal" className="luxe-mobile-scroll flex min-w-0 max-w-full gap-2 overflow-x-auto pb-3 xl:block xl:overflow-visible xl:pb-0">
               {serviceCategories.map((item, index) => (
                 <button key={item.id} id={"service-tab-"+index} type="button" role="tab" aria-selected={active===index} aria-controls="service-panel" tabIndex={active===index?0:-1} onClick={() => setActive(index)} onKeyDown={(event) => handleTabKey(event,index)} className={active===index ? "group flex min-h-[60px] shrink-0 items-center justify-between gap-7 border border-[#29221b] bg-[#29221b] px-5 text-left text-[#f6eee2] transition-colors xl:w-full xl:border-x-0 xl:border-t-0 xl:py-6 xl:pr-4" : "group flex min-h-[60px] shrink-0 items-center justify-between gap-7 border border-[#241e1a]/15 bg-transparent px-5 text-left text-[#51483f] transition-colors hover:bg-[#eae1d5] xl:w-full xl:border-x-0 xl:border-t-0 xl:py-6 xl:pr-4"}>

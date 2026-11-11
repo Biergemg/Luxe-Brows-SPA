@@ -1,47 +1,50 @@
 import Image from "next/image";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Diamond, MoveUpRight } from "lucide-react";
 import { businessInfo } from "@/data/businessInfo";
 
-const images = [
-  { src: "/images/carrusel/tinte-cejas.jpeg", title: "Diseño de cejas" },
-  { src: "/images/carrusel/shaping-cejas.jpeg", title: "Shaping de cejas" },
-  { src: "/images/carrusel/diseno-cejas.jpeg", title: "Pigmentación de cejas" },
-  { src: "/images/carrusel/laminacion-cejas.jpeg", title: "Laminación de cejas" },
-  { src: "/images/carrusel/laminacion-con-tinte.jpeg", title: "Laminación con tinte" },
-  { src: "/images/carrusel/epilacion-cejas-cera-hilo.jpeg", title: "Epilación de cejas" },
-  { src: "/images/carrusel/lash-lift.jpeg", title: "Lash lift" },
-  { src: "/images/carrusel/faciales-tratamientos.jpeg", title: "Tratamientos faciales" },
-  { src: "/images/carrusel/epilacion-corporal.jpeg", title: "Epilación corporal" },
-  { src: "/images/carrusel/hair-care.jpeg", title: "Hair care" },
-  { src: "/images/carrusel/body-sculpt-masaje.jpeg", title: "Body sculpt" }
+const moments = [
+  { src: "/images/gallery-3.webp", alt: "Procedimiento de cejas realizado en cabina", label: "Diseño de cejas", number: "01", className: "col-span-2 lg:col-span-6" },
+  { src: "/images/skin-tech.webp", alt: "Equipo de cuidado facial aplicado durante un tratamiento", label: "Facial", number: "02", className: "col-span-1 lg:col-span-3" },
+  { src: "/images/capilar-luxe.webp", alt: "Resultado de un tratamiento capilar", label: "Cuidado capilar", number: "03", className: "col-span-1 lg:col-span-3" },
+  { src: "/images/spa-ambient.webp", alt: "Tratamiento de epilación facial", label: "Epilación", number: "04", className: "col-span-1 lg:col-span-3" },
+  { src: "/images/body-sculpt.webp", alt: "Terapia corporal", label: "Cuidado corporal", number: "05", className: "col-span-1 lg:col-span-3" },
+  { src: "/images/mirada-luxe.webp", alt: "Detalle del diseño personalizado de cejas", label: "La mirada Luxe", number: "06", className: "col-span-2 lg:col-span-6" },
 ];
 
 export function SignatureGallery() {
   return (
-    <section id="galeria" className="overflow-hidden bg-[#e7ddd0] py-24 md:py-32" aria-labelledby="galeria-title">
+    <section id="galeria" className="overflow-hidden bg-[#e7ddd0] py-24 text-[#241e1a] md:py-36" aria-labelledby="galeria-title">
       <div className="luxe-container">
-        <div data-reveal className="mb-10 flex flex-col justify-between gap-5 md:mb-14 md:flex-row md:items-end">
+        <div data-reveal className="mb-12 grid gap-7 md:mb-16 lg:grid-cols-[1.15fr_.85fr] lg:items-end">
           <div>
-            <p className="luxe-eyebrow mb-5 text-[#694a30]">Nuestro universo</p>
-            <h2 id="galeria-title" className="luxe-serif max-w-2xl text-[clamp(3rem,5vw,5rem)] leading-[1.08] tracking-[-.055em]">Cada detalle <em>importa.</em></h2>
+            <p className="luxe-eyebrow mb-6 flex items-center gap-3 text-[#694a30]"><Diamond size={14} strokeWidth={1.4}/> 03 / Nuestro universo</p>
+            <h2 id="galeria-title" className="luxe-serif max-w-4xl text-[clamp(3.3rem,6vw,6.5rem)] leading-[1.05] tracking-[-.07em]">Detrás de cada <em>detalle.</em></h2>
           </div>
-          <a href={businessInfo.social.instagram} target="_blank" rel="noopener noreferrer" className="luxe-link self-start text-[#493c32]">Ver Instagram <ArrowUpRight size={16} /></a>
+          <div className="max-w-md lg:ml-auto">
+            <p className="mb-7 text-sm leading-8 text-[#5e5144]">Un recorrido visual por el cuidado de cejas, pestañas, piel y cuerpo. El carrusel principal reúne nuestros creativos originales.</p>
+            <a href={businessInfo.social.instagram} target="_blank" rel="noopener noreferrer" className="luxe-link text-[#493c32]">Ver más en Instagram <ArrowUpRight size={16}/></a>
+          </div>
+        </div>
+        <div className="grid grid-cols-2 gap-3 md:gap-5 lg:grid-cols-12">
+          {moments.map((item, i) => (
+            <figure key={item.src} data-reveal className={item.className + " luxe-editorial-panel group relative min-w-0 bg-[#d0c1ae]"}>
+              <div className={i === 0 || i === 5 ? "relative aspect-[1.2/1] w-full sm:aspect-[1.55/1]" : "relative aspect-[.78/1] w-full sm:aspect-[.84/1]"}>
+                <Image src={item.src} alt={item.alt} fill loading="lazy" sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 50vw" className="object-cover transition-transform duration-[1100ms] ease-out group-hover:scale-[1.055]"/>
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#17130f]/85 via-transparent to-transparent"/>
+                <div className="absolute left-4 top-4 z-10 flex h-9 w-9 items-center justify-center border border-white/60 bg-black/20 text-[10px] font-semibold tracking-widest text-white backdrop-blur-sm sm:left-6 sm:top-6">{item.number}</div>
+                <figcaption className="absolute bottom-5 left-4 right-4 z-10 flex items-end justify-between gap-2 text-white sm:bottom-7 sm:left-7 sm:right-7">
+                  <span className="luxe-serif text-[clamp(1.15rem,2.5vw,2.1rem)] leading-tight tracking-[-.04em]">{item.label}</span>
+                  <MoveUpRight size={18} strokeWidth={1.2} className="shrink-0 text-[#dbb78b]" aria-hidden="true"/>
+                </figcaption>
+              </div>
+            </figure>
+          ))}
+        </div>
+        <div className="mt-10 flex items-center justify-between border-t border-[#241e1a]/20 pt-5">
+          <p className="luxe-eyebrow text-[#70533c]">Luxe Brows & Spa · By Carely Gonzalez</p>
+          <a href="#inicio" className="flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[.15em] text-[#70533c]">Volver al carrusel <ArrowUpRight size={16}/></a>
         </div>
       </div>
-      <div role="region" aria-label="Galería de publicaciones de Luxe Brows & Spa" tabIndex={0} className="luxe-mobile-scroll flex snap-x snap-mandatory gap-4 overflow-x-auto px-6 pb-6 md:gap-6 md:px-[max(3rem,calc((100vw-1380px)/2))]">
-        {images.map((item, index) => (
-          <div key={item.src} className="group w-[240px] flex-none snap-start sm:w-[300px] md:w-[340px]">
-            <div className="luxe-image-frame relative aspect-[4/5]">
-              <Image src={item.src} alt={item.title + " · contenido original Luxe Brows & Spa"} fill sizes="(max-width:768px) 240px, 340px" className="object-cover" loading="lazy" />
-            </div>
-            <div className="mt-4 flex items-center justify-between gap-3 border-t border-[#2c221a]/15 pt-3">
-              <span className="text-sm text-[#40352d]">{item.title}</span>
-              <span className="text-xs text-[#68492f]">{String(index + 1).padStart(2,"0")}</span>
-            </div>
-          </div>
-        ))}
-      </div>
-      <div className="luxe-container mt-3 text-xs tracking-[.1em] text-[#584b40]">Desliza para explorar la galería completa →</div>
     </section>
   );
 }

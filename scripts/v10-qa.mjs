@@ -26,6 +26,13 @@ try {
       title: document.title,
       h1: document.querySelectorAll("h1").length
     }));
+    const slideButtons = await page.getByRole("group", { name: "Elegir fotografía" }).getByRole("button").count();
+    const initialSlide = await page.locator("[data-luxe-slide]").getAttribute("data-luxe-slide");
+    await page.getByRole("button", { name: "Fotografía siguiente" }).click();
+    const nextSlide = await page.locator("[data-luxe-slide]").getAttribute("data-luxe-slide");
+    await page.getByRole("button", { name: "Fotografía anterior" }).click();
+    const restoredSlide = await page.locator("[data-luxe-slide]").getAttribute("data-luxe-slide");
+    const carouselOK = slideButtons === 11 && initialSlide === "0" && nextSlide === "1" && restoredSlide === "0";
     const tabs = await page.locator('[role="tab"]').count();
     await page.locator("#service-tab-2").click();
     const facialSelected = await page.locator("#service-tab-2").getAttribute("aria-selected");
@@ -40,7 +47,7 @@ try {
     }
 
     const ok = response.status() === 200 && result.width <= width + 2 && result.booking >= 2 &&
-      result.broken === 0 && result.h1 === 1 && tabs === 6 && facialSelected === "true" &&
+      result.broken === 0 && result.h1 === 1 && carouselOK && tabs === 6 && facialSelected === "true" &&
       treatmentVisible === 1 && mobileMenuOK && pageErrors.length === 0;
     console.log(JSON.stringify({ viewport: width, result: ok ? "PASS" : "FAIL", documentWidth: result.width, bookingLinks: result.booking, pageErrors }));
     if (!ok) failures++;

@@ -4,35 +4,60 @@ import { useEffect } from "react";
 
 export function MotionDirector() {
   useEffect(() => {
-    const media = window.matchMedia("(prefers-reduced-motion: reduce)");
-    if (media.matches) return;
+    const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (motionPreference.matches) return;
 
     let disposed = false;
     let cleanup = () => {};
-    const start = async () => {
-      const [{ gsap }, { ScrollTrigger }] = await Promise.all([import("gsap"), import("gsap/ScrollTrigger")]);
+
+    const initialize = async () => {
+      const [{ gsap }, { ScrollTrigger }] = await Promise.all([
+        import("gsap"),
+        import("gsap/ScrollTrigger")
+      ]);
       if (disposed) return;
+
       gsap.registerPlugin(ScrollTrigger);
       const context = gsap.context(() => {
-        gsap.fromTo("[data-hero-animate]",
-          { y: 38, opacity: 0 },
-          { y: 0, opacity: 1, duration: 1.3, ease: "power3.out", stagger: .13, delay: .12, clearProps: "transform,opacity" }
+        // Intro choreography: reveal textual hierarchy before the original brand carousel.
+        gsap.fromTo(
+          "[data-hero-animate]",
+          { y: 31, opacity: 0 },
+          { y: 0, opacity: 1, duration: 1, ease: "power3.out", stagger: 0.1, delay: 0.08, clearProps: "transform,opacity" }
         );
-        gsap.utils.toArray<HTMLElement>("[data-reveal]").forEach((element) => {
-          gsap.fromTo(element,
-            { y: 32, opacity: 0 },
-            { y: 0, opacity: 1, duration: .9, ease: "power2.out", clearProps: "transform,opacity", scrollTrigger: { trigger: element, start: "top 94%", once: true } }
+
+        // Section transitions stay readable with JS disabled and never lock scrolling.
+        gsap.utils.toArray<HTMLElement>("[data-reveal]").forEach((element, index) => {
+          gsap.fromTo(
+            element,
+            { y: 30, opacity: 0 },
+            {
+              y: 0, opacity: 1, duration: 0.88, ease: "power2.out",
+              delay: index % 3 === 1 ? 0.08 : 0,
+              clearProps: "transform,opacity",
+              scrollTrigger: { trigger: element, start: "top 94%", once: true }
+            }
           );
         });
-        const mediaElement = document.querySelector("[data-parallax]");
-        if (mediaElement && window.innerWidth >= 1024) {
-          gsap.to(mediaElement, { yPercent: 7, ease: "none", scrollTrigger: { trigger: "#inicio", start: "top top", end: "bottom top", scrub: 1 } });
-        }
+
+        // Image choreography has a different tempo from the text.
+        gsap.utils.toArray<HTMLElement>(".luxe-editorial-panel img").forEach((element) => {
+          gsap.fromTo(
+            element,
+            { scale: 1.09 },
+            {
+              scale: 1, duration: 1.7, ease: "power3.out",
+              clearProps: "scale",
+              scrollTrigger: { trigger: element, start: "top 96%", once: true }
+            }
+          );
+        });
       }, document.body);
+
       cleanup = () => context.revert();
     };
 
-    start().catch(() => { /* Optional animation may fail without affecting content. */ });
+    initialize().catch(() => { /* CSS and controls remain usable if optional motion fails. */ });
     return () => { disposed = true; cleanup(); };
   }, []);
   return null;
