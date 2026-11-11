@@ -1,4 +1,5 @@
-import { ArrowRight, ArrowUpRight, Camera, Clock3, Diamond, MapPin, MessageCircle, Users } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Clock3, Diamond, MapPin } from "lucide-react";
+import { BrandIcon } from "@/components/ui/BrandIcon";
 import { businessInfo } from "@/data/businessInfo";
 import { siteConfig } from "@/lib/site";
 import { getGoogleMapsUrl } from "@/lib/maps";
@@ -14,7 +15,7 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="relative overflow-hidden bg-[#17120f] pb-27 pt-15 text-[#f3e9dd] md:pb-10 md:pt-20" aria-label="Información y contacto de Luxe Brows & Spa">
+    <footer className="relative overflow-hidden bg-[#17120f] pb-12 pt-15 text-[#f3e9dd] md:pb-10 md:pt-20" aria-label="Información y contacto de Luxe Brows & Spa">
       <div className="pointer-events-none absolute inset-0 opacity-30" style={{ background: "radial-gradient(ellipse at 70% 20%,rgba(129,93,58,.24),transparent 55%)" }} aria-hidden="true"/>
       <div className="luxe-container relative">
         <div data-reveal className="border-b border-[#ddbb91]/25 pb-10 md:pb-13">
@@ -47,9 +48,9 @@ export function Footer() {
           <div data-reveal className="min-w-0">
             <p className="luxe-eyebrow mb-7 text-[#dec39c]">02 / Conecta</p>
             <div className="space-y-3">
-              <a href={businessInfo.social.instagram} target="_blank" rel="noopener noreferrer" className="group flex min-h-9 items-center gap-3 text-sm text-[#f3e9dd]/85 transition-colors hover:text-[#d4b58d]"><Camera size={17} strokeWidth={1.5} className="shrink-0 text-[#d8b58a]" aria-hidden="true"/> Instagram</a>
-              <a href={businessInfo.social.facebook} target="_blank" rel="noopener noreferrer" className="group flex min-h-9 items-center gap-3 text-sm text-[#f3e9dd]/85 transition-colors hover:text-[#d4b58d]"><Users size={17} strokeWidth={1.5} className="shrink-0 text-[#d8b58a]" aria-hidden="true"/> Facebook</a>
-              <a href={generateWhatsAppLink()} target="_blank" rel="noopener noreferrer" className="group flex min-h-9 items-center gap-3 text-sm text-[#f3e9dd]/85 transition-colors hover:text-[#d4b58d]"><MessageCircle size={17} strokeWidth={1.5} className="shrink-0 text-[#d8b58a]" aria-hidden="true"/> WhatsApp</a>
+              <a href={businessInfo.social.instagram} target="_blank" rel="noopener noreferrer" className="group flex min-h-9 items-center gap-3 text-sm text-[#f3e9dd]/85 transition-colors hover:text-[#d4b58d]"><BrandIcon name="instagram" size={17} className="shrink-0 text-[#d8b58a]"/> Instagram</a>
+              <a href={businessInfo.social.facebook} target="_blank" rel="noopener noreferrer" className="group flex min-h-9 items-center gap-3 text-sm text-[#f3e9dd]/85 transition-colors hover:text-[#d4b58d]"><BrandIcon name="facebook" size={17} className="shrink-0 text-[#d8b58a]"/> Facebook</a>
+              <a href={generateWhatsAppLink()} target="_blank" rel="noopener noreferrer" className="group flex min-h-9 items-center gap-3 text-sm text-[#f3e9dd]/85 transition-colors hover:text-[#d4b58d]"><BrandIcon name="whatsapp" size={17} className="shrink-0 text-[#d8b58a]"/> WhatsApp</a>
               <p className="break-all pt-1 text-xs leading-6 text-[#e6d5c0]/85">+{businessInfo.whatsapp}</p>
             </div>
           </div>

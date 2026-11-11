@@ -1,40 +1,28 @@
-# Luxe Brows & Spa — V10.2 / Experiencia editorial integral
+# Luxe Brows & Spa — V10.3 · Presentación para la propietaria
 
-**Estado:** propuesta de revisión en rama `feat/luxe-v10-editorial-preview`. No modificar producción ni fusionar a `main` sin aprobación explícita de la propietaria.
+Estado: revisión lista para mostrar. Rama aislada feat/luxe-v10-editorial-preview. Producción y main intactos.
 
-## Una identidad, un diseño adaptable
+## Dirección de arte
+Un solo sitio responsive con la misma identidad en escritorio, tablet y móvil: espresso, champagne y marfil, tipografía serif, fotografías reales, carrusel original protagonista y navegación clara.
 
-La versión V10.2 utiliza exactamente los mismos componentes, fotografías, textos, colores, navegación y modelo de interacción en escritorio, tablet y móvil. Las reglas responsive solo reorganizan la retícula, escalan las imágenes y ajustan los espacios. No existen dos sitios ni dos líneas visuales distintas.
+## Entregado en V10.3
+- Portada con las once piezas promocionales previamente publicadas, sin etiquetas añadidas sobre las imágenes.
+- Logotipos oficiales de Instagram, Facebook y WhatsApp mediante Simple Icons; otros iconos mantienen una familia lineal coherente.
+- Dos fotografías de experiencia del mismo tamaño visual: altura idéntica desde 320 hasta 1440 px; composición equilibrada sin miniaturas flotantes.
+- Encabezado sticky integrado al flujo del documento; CTA de reserva en móvil sin barra flotante que tape texto y fotografías.
+- Galería editorial con ampliación y navegación táctil, por teclado y controles visibles.
+- Cierre fotográfico y pie de página rediseñados con accesos a servicios, redes, reserva, ubicación y políticas.
+- Eliminados textos internos de implementación: Volver al carrusel original, Colección original y Contenido auténtico.
 
-**Dirección creativa:** Luxury Editorial Beauty: fondos espresso, marfil y champagne, tipografía editorial, encuadres fotográficos protagonistas, iconografía lineal, transiciones discretas y prioridad permanente a la reserva.
+## Contenido comercial invariable
+Sin cambios frente a main en data/, lib/, aviso-de-privacidad ni politicas-de-citas. Precios, testimonios, horarios, ubicación, enlace Colavo, WhatsApp, SEO, tracking y políticas se conservan. Las imágenes originales siguen incluidas.
 
-## Intervenciones
+## Validación
+- npm run check: lint, TypeScript y build de producción aprobados.
+- npm run qa:v10: seis anchos (320, 375, 390, 768, 1024 y 1440 px), menú, carrusel, categorías, galería, reservas y ausencia de errores JavaScript.
+- axe-core WCAG A y AA a 390 y 1440 px: cero infracciones detectadas.
+- Geometría: dos fotografías con altura idéntica; sin CTA inferior fijo ni desbordamiento horizontal.
+- Evidencia visual: capturas reales de Chrome en docs/v10-review/.
 
-- Portada: mantiene las 11 publicaciones originales, su orden y sus textos, con navegación táctil, controles y pausa que respeta movimiento reducido.
-- Encabezado: logo editorial, diamante, horario y ubicación, rutas a secciones, CTA de reserva; menú abierto con la misma identidad visual y contenido.
-- Experiencia: el titular aparece antes de las imágenes al fluir la retícula, y permanece junto a la composición fotográfica en escritorio.
-- Transición de marca: banda cinética con las categorías comerciales de Luxe, sin bloquear scroll ni reproducir audio.
-- Catálogo: seis categorías con servicios, descripciones y precios originales; selector accesible.
-- Testimonios: citas originales, no reescritas.
-- Galería: composición fotográfica asimétrica común a todos los anchos. Las seis imágenes se amplían mediante diálogo nativo, con teclado, Escape, controles y deslizamiento táctil.
-- Ubicación: mapa, dirección exacta, horarios, facilidad de estacionamiento, métodos de pago y acceso directo a Google Maps y WhatsApp.
-- Cierre: imagen de marca y reserva reorganizadas en una sola composición escalable.
-- Footer: gran marca tipográfica y enlaces en retícula adaptable, sin columnas de espacio muerto. Se conserva dirección, horario, teléfono y políticas.
-- Desktop: el CTA fijo redundante se elimina; el botón del encabezado permanece. En móvil hay CTA flotante solo al desplazarse.
-
-## Integridad del negocio
-
-Sin cambios respecto a la rama base en `data/`, `lib/`, `app/aviso-de-privacidad/` y `app/politicas-de-citas/`. Permanecen los precios, servicios, testimonios, Colavo, WhatsApp, dirección, horarios, redes sociales, SEO, analítica y políticas. Se mantienen todos los recursos fotográficos originales.
-
-## Validación reproducible
-
-- `npm run check`: lint, TypeScript, compilación Next.js y generación estática.
-- `npm run qa:v10`: pruebas Playwright en 320, 375, 390, 768, 1024 y 1440 px; sin desbordamiento horizontal; menú móvil visible y no superpuesto; galería expandible y navegación accesible; 11 slides originales; catálogo funcional; botones Colavo; errores JavaScript e imágenes visibles.
-- Axe-core WCAG 2.0/2.1 A y AA en 390 y 1440 px, con revisión manual complementaria pendiente.
-- Capturas reales de Chrome guardadas en `docs/v10-review/`.
-
-## Presentación
-
-Revisar las capturas de la portada, galería, experiencia, ubicación, menú y cierre en móvil y escritorio. Probar en un teléfono real la reproducción del carrusel, el menú y la reserva. Mostrar un enlace Preview solo a personas autorizadas: el despliegue de Vercel puede exigir inicio de sesión y no equivale a una URL pública.
-
-**No publicar sin aprobación explícita.** El calificativo «top 1 %» sigue siendo una aspiración: requeriría comparación externa, evaluación independiente y resultados de usuarios. Tampoco se afirma mejora causal de reservas sin datos.
+## Publicación
+Esta rama es solo para demostración. El preview de Vercel puede requerir iniciar sesión. No modificar main ni producción sin aprobación de la propietaria. El objetivo top 1 % no está certificado externamente.

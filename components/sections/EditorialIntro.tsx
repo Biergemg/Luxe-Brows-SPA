@@ -1,51 +1,47 @@
 import Image from "next/image";
-import { ArrowUpRight, Diamond, Sparkles } from "lucide-react";
+import { ArrowUpRight, Diamond } from "lucide-react";
 import { getBookingLink } from "@/lib/utils";
 
 export function EditorialIntro() {
   return (
-    <section id="experiencia" className="relative isolate overflow-hidden bg-[#ede5da] py-22 text-[#241e1a] md:py-32 xl:py-40" aria-labelledby="experiencia-title">
-      <div className="pointer-events-none absolute -right-[6vw] top-0 select-none luxe-serif text-[clamp(16rem,41vw,45rem)] leading-[.9] tracking-[-.16em] text-[#d7c8b6]/40" aria-hidden="true">L</div>
-      <div className="luxe-container relative z-10 grid min-w-0 gap-13 lg:grid-cols-[.94fr_1.06fr] lg:items-center lg:gap-18 xl:gap-28">
-        <div data-reveal className="order-1 lg:order-2">
-          <div className="mb-7 flex items-center gap-3 text-[#674b32]">
-            <Diamond size={16} strokeWidth={1.3} aria-hidden="true"/>
-            <span className="luxe-eyebrow">01 / La experiencia Luxe</span>
+    <section id="experiencia" aria-labelledby="experiencia-title" className="relative overflow-hidden bg-[#ede5da] py-20 text-[#241e1a] md:py-28 lg:py-32">
+      <div className="luxe-container">
+        <div data-reveal className="mb-10 grid gap-7 lg:mb-16 lg:grid-cols-[1.07fr_.93fr] lg:items-end lg:gap-16">
+          <div>
+            <p className="luxe-eyebrow mb-6 flex items-center gap-3 text-[#674b32]"><Diamond size={15} strokeWidth={1.2} aria-hidden="true"/> 01 / La experiencia Luxe</p>
+            <h2 id="experiencia-title" className="luxe-serif max-w-[850px] text-[clamp(3.4rem,7vw,7.4rem)] leading-[1.02] tracking-[-.07em]">Belleza que se <em className="text-[#84613e]">vive.</em></h2>
           </div>
-          <h2 id="experiencia-title" className="luxe-serif max-w-3xl text-[clamp(3.5rem,7.3vw,8rem)] leading-[.99] tracking-[-.072em]">
-            Belleza que<br/>se <em className="text-[#84613e]">vive.</em>
-          </h2>
-          <p className="mt-7 max-w-xl border-l border-[#98704c] pl-5 text-[17px] leading-8 text-[#4e4135] lg:mt-11 lg:text-xl lg:leading-9">Tu mirada, tu piel y tu bienestar merecen atención a los detalles.</p>
-          <div className="my-7 luxe-gold-line lg:my-11" aria-hidden="true"/>
-          <div className="grid gap-5 sm:grid-cols-[90px_1fr] sm:gap-9">
-            <span className="luxe-serif text-[54px] italic leading-none text-[#795838]" aria-hidden="true">01<span className="text-[#b3916d]">/</span></span>
-            <div>
-              <p className="max-w-xl text-sm leading-8 text-[#5b4d40]">
-                Diseño de cejas y pestañas, faciales, tratamientos corporales, epilación y cuidado capilar. Descubre el menú completo y elige tu siguiente cita.
-              </p>
-              <a href={getBookingLink()} target="_blank" rel="noopener noreferrer" className="luxe-link mt-8 text-[#29211b]">Vive tu experiencia Luxe <ArrowUpRight size={16} aria-hidden="true"/></a>
-            </div>
+          <div>
+            <p className="max-w-[550px] border-l border-[#98704c] pl-5 text-base leading-8 text-[#4e4135] lg:ml-auto lg:text-lg lg:leading-9">Tu mirada, tu piel y tu bienestar merecen atención a los detalles.</p>
+            <p className="mt-5 max-w-[550px] text-sm leading-7 text-[#5b4d40] lg:ml-auto">Diseño de cejas y pestañas, faciales, tratamientos corporales, epilación y cuidado capilar. Descubre el menú completo y elige tu siguiente cita.</p>
           </div>
         </div>
-        <div data-reveal className="order-2 min-w-0 lg:order-1">
-          <div className="relative pb-[13%] pl-[4%] pr-[15%]">
-            <div className="pointer-events-none absolute bottom-[7%] left-0 top-[7%] w-[1px] bg-[#a78660]/80" aria-hidden="true"/>
-            <div className="luxe-image-frame luxe-editorial-panel relative aspect-[4/5] w-full border-[6px] border-[#e9e0d3] bg-[#d0bca6] shadow-[0_24px_65px_rgba(52,37,23,.16)] sm:border-[10px]">
-              <Image src="/images/gallery-3.webp" alt="Profesional realizando diseño de cejas en Luxe Brows & Spa" fill className="object-cover" loading="lazy" sizes="(max-width:1024px) 82vw, 38vw"/>
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#211912]/50 via-transparent to-transparent" aria-hidden="true"/>
-              <div className="pointer-events-none absolute bottom-5 left-5 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[.18em] text-[#fff6ea] sm:bottom-8 sm:left-8"><Sparkles size={15} aria-hidden="true"/> The Luxe Edit</div>
+
+        <div data-reveal className="grid min-w-0 grid-cols-2 items-stretch gap-3 sm:gap-5 lg:grid-cols-[1.12fr_.88fr] lg:gap-7">
+          <figure className="group relative min-w-0 overflow-hidden bg-[#c3b5a3]">
+            <div className="relative aspect-[.7/1] w-full sm:aspect-[.85/1] lg:aspect-auto lg:h-[clamp(440px,42vw,620px)]">
+              <Image src="/images/gallery-3.webp" alt="Especialista realizando un diseño de cejas en Luxe Brows & Spa" fill loading="lazy" sizes="(max-width: 1024px) 48vw, 55vw" className="object-cover object-center transition-transform duration-[1100ms] group-hover:scale-[1.04]"/>
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#1c1510]/70 via-transparent to-transparent" aria-hidden="true"/>
+              <div className="absolute inset-x-4 bottom-4 flex items-center justify-between gap-2 text-[#fff8eb] sm:inset-x-7 sm:bottom-7">
+                <figcaption className="luxe-serif text-[clamp(1.15rem,3vw,2.6rem)] leading-tight tracking-[-.04em]">Diseño de cejas</figcaption>
+                <span className="luxe-serif text-xs italic text-[#e7c59b] sm:text-lg" aria-hidden="true">01</span>
+              </div>
             </div>
-            <div className="luxe-image-frame luxe-editorial-panel absolute bottom-0 right-0 aspect-[.82/1] w-[41%] border-[7px] border-[#ede5da] bg-[#c5aa8d] shadow-[0_20px_55px_rgba(42,28,17,.18)] sm:border-[12px]">
-              <Image src="/images/spa-ambient.webp" alt="Epilación facial profesional" fill className="object-cover" loading="lazy" sizes="(max-width:1024px) 34vw, 19vw"/>
+          </figure>
+          <figure className="group relative min-w-0 overflow-hidden bg-[#c6ae94]">
+            <div className="relative aspect-[.7/1] w-full sm:aspect-[.85/1] lg:aspect-auto lg:h-[clamp(440px,42vw,620px)]">
+              <Image src="/images/spa-ambient.webp" alt="Tratamiento profesional de epilación facial" fill loading="lazy" sizes="(max-width: 1024px) 48vw, 40vw" className="object-cover object-center transition-transform duration-[1100ms] group-hover:scale-[1.04]"/>
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#1c1510]/70 via-transparent to-transparent" aria-hidden="true"/>
+              <div className="absolute inset-x-4 bottom-4 flex items-center justify-between gap-2 text-[#fff8eb] sm:inset-x-7 sm:bottom-7">
+                <figcaption className="luxe-serif text-[clamp(1.15rem,3vw,2.6rem)] leading-tight tracking-[-.04em]">Epilación facial</figcaption>
+                <span className="luxe-serif text-xs italic text-[#e7c59b] sm:text-lg" aria-hidden="true">02</span>
+              </div>
             </div>
-            <div className="absolute -top-5 right-[4%] flex h-17 w-17 items-center justify-center rounded-full border border-[#937250]/55 bg-[#ede5da] text-[#876541] shadow-md sm:h-22 sm:w-22" aria-hidden="true">
-              <Diamond size={28} strokeWidth={.9}/>
-            </div>
-          </div>
-          <div className="mt-6 flex items-center justify-between gap-3 border-t border-[#8e7255]/25 pt-4">
-            <span className="luxe-eyebrow text-[#664b34]">Luxe Brows & Spa</span>
-            <span className="luxe-eyebrow text-[#664b34]">By Carely Gonzalez</span>
-          </div>
+          </figure>
+        </div>
+        <div data-reveal className="mt-7 flex flex-col gap-5 border-t border-[#8e7255]/30 pt-6 sm:flex-row sm:items-center sm:justify-between">
+          <p className="luxe-eyebrow text-[#66503a]">Luxe Brows & Spa · By Carely Gonzalez</p>
+          <a href={getBookingLink()} target="_blank" rel="noopener noreferrer" className="luxe-link self-start text-[#29211b]">Reserva tu experiencia <ArrowUpRight size={16} aria-hidden="true"/></a>
         </div>
       </div>
     </section>

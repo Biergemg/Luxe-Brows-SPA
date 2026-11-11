@@ -2,7 +2,8 @@ import { businessInfo } from "@/data/businessInfo";
 import { getBookingLink, generateWhatsAppLink } from "@/lib/utils";
 import { whatsappMessages } from "@/lib/site";
 import { getGoogleMapsEmbedUrl, getGoogleMapsUrl } from "@/lib/maps";
-import { ArrowUpRight, Clock3, MapPin, CarFront, CreditCard, Diamond, MessageCircle } from "lucide-react";
+import { ArrowUpRight, Clock3, MapPin, CarFront, CreditCard, Diamond } from "lucide-react";
+import { BrandIcon } from "@/components/ui/BrandIcon";
 
 export function UbicacionFacilidades() {
   return (
@@ -49,7 +50,7 @@ export function UbicacionFacilidades() {
             </article>
             <div data-reveal className="col-span-2 grid grid-cols-1 gap-3 sm:grid-cols-2">
               <a href={getBookingLink()} target="_blank" rel="noopener noreferrer" className="luxe-cta luxe-cta-dark min-w-0 px-3 text-center text-[10px] sm:text-[11px]">Reservar cita <ArrowUpRight size={16}/></a>
-              <a href={generateWhatsAppLink(whatsappMessages.location)} target="_blank" rel="noopener noreferrer" className="flex min-h-[54px] min-w-0 items-center justify-center gap-2 border border-[#6c5640]/60 px-2 text-center text-[10px] font-semibold uppercase tracking-[.12em] text-[#493c30] transition-colors hover:bg-[#decbb3]"><MessageCircle size={16}/> WhatsApp</a>
+              <a href={generateWhatsAppLink(whatsappMessages.location)} target="_blank" rel="noopener noreferrer" className="flex min-h-[54px] min-w-0 items-center justify-center gap-2 border border-[#6c5640]/60 px-2 text-center text-[10px] font-semibold uppercase tracking-[.12em] text-[#493c30] transition-colors hover:bg-[#decbb3]"><BrandIcon name="whatsapp" size={16}/> WhatsApp</a>
             </div>
           </div>
         </div>

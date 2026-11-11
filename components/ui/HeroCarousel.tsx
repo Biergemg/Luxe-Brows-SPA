@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { ArrowLeft, ArrowRight, Pause, Play, Sparkles } from "lucide-react";
+import { ArrowLeft, ArrowRight, Pause, Play } from "lucide-react";
 
 export const originalLuxeSlides = [
   { src: "/images/carrusel/tinte-cejas.jpeg", alt: "Publicación original de Luxe Brows sobre tinte de cejas", label: "Tinte de cejas" },
@@ -70,7 +70,7 @@ export function HeroCarousel() {
     <div
       ref={carouselRef}
       role="region"
-      aria-label="Carrusel original de Luxe Brows & Spa"
+      aria-label="Servicios destacados de Luxe Brows & Spa"
       aria-roledescription="carrusel"
       className="luxe-original-carousel relative mx-auto w-full max-w-[650px]"
       data-cinematic-media
@@ -105,13 +105,11 @@ export function HeroCarousel() {
             data-luxe-slide={index}
           />
           <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/15" aria-hidden="true" />
-          <div className="pointer-events-none absolute right-3 top-3 flex items-center gap-2 bg-[#201a16]/80 px-3 py-2 text-[9px] font-semibold uppercase tracking-[.2em] text-[#f7e9d5] backdrop-blur-sm sm:right-5 sm:top-5" aria-hidden="true">
-            <Sparkles size={13} className="text-[#d4ad7b]" /> The Luxe Edit
-          </div>
+
         </div>
         <div className="flex min-h-[75px] items-center justify-between gap-3 px-2 py-3 sm:min-h-[91px] sm:px-3">
           <div className="min-w-0">
-            <p className="mb-1 text-[9px] font-semibold uppercase tracking-[.2em] text-[#bd9c74]">Colección original · {String(index + 1).padStart(2, "0")} / {originalLuxeSlides.length}</p>
+            <p className="mb-1 text-[9px] font-semibold uppercase tracking-[.2em] text-[#bd9c74]">Servicios · {String(index + 1).padStart(2, "0")} / {originalLuxeSlides.length}</p>
             <p className="luxe-serif truncate text-[18px] leading-tight text-[#f8eee1] sm:text-[24px]" aria-live={active ? "off" : "polite"}>{slide.label}</p>
           </div>
           <div className="flex shrink-0 items-center gap-1.5">

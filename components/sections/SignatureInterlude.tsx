@@ -6,7 +6,7 @@ export function SignatureInterlude() {
   return (
     <aside className="relative overflow-hidden border-y border-[#d9b68d]/25 bg-[#231c17] py-10 text-[#efe0ce] md:py-14" aria-label="Experiencias de Luxe Brows & Spa">
       <div className="luxe-container mb-8 flex items-center justify-between gap-4 text-[10px] font-semibold uppercase tracking-[.2em] text-[#dfc09c]">
-        <span className="flex items-center gap-3"><Diamond size={14} strokeWidth={1.2}/> The Luxe Signature</span>
+        <span className="flex items-center gap-3"><Diamond size={14} strokeWidth={1.2}/> Luxe Brows & Spa</span>
         <span className="hidden items-center gap-2 sm:flex">Cuidado de principio a fin <Sparkles size={13}/></span>
         <span className="sm:hidden">By Carely Gonzalez</span>
       </div>

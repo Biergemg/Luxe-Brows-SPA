@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { ArrowUpRight, Camera, CircleHelp, Clock3, Diamond, Images, MapPin, Menu, Sparkles, X } from "lucide-react";
+import { ArrowUpRight, CalendarDays, CircleHelp, Clock3, Diamond, Images, MapPin, Menu, Sparkles, X } from "lucide-react";
+import { BrandIcon } from "@/components/ui/BrandIcon";
 import { businessInfo } from "@/data/businessInfo";
 import { getBookingLink } from "@/lib/utils";
 
@@ -65,7 +66,7 @@ export function Navbar() {
   const light = scrolled || menuOpen;
 
   return (
-    <header className={light ? "fixed inset-x-0 top-0 z-50 border-b border-[#33271e]/10 bg-[#f6f2ec]/96 shadow-[0_8px_28px_rgba(25,20,15,.07)] backdrop-blur-xl transition-all duration-500" : "fixed inset-x-0 top-0 z-50 border-b border-white/15 bg-[#181512]/85 backdrop-blur-lg transition-all duration-500"}>
+    <header className={light ? "sticky top-0 z-50 border-b border-[#33271e]/10 bg-[#f6f2ec]/96 shadow-[0_8px_28px_rgba(25,20,15,.07)] backdrop-blur-xl transition-all duration-500" : "sticky top-0 z-50 border-b border-white/15 bg-[#181512]/85 backdrop-blur-lg transition-all duration-500"}>
       <div className={light ? "border-b border-[#33271e]/10 text-[#554637]" : "border-b border-white/15 text-[#e4d6c4]"}>
         <div className="luxe-container flex h-[34px] items-center justify-between gap-3 text-[9px] font-semibold uppercase tracking-[.12em] sm:text-[10px] sm:tracking-[.17em]">
           <a href={businessInfo.mapsUrl} target="_blank" rel="noopener noreferrer" className="flex min-w-0 items-center gap-2 transition-opacity hover:opacity-70">
@@ -94,8 +95,9 @@ export function Navbar() {
           ))}
         </nav>
         <div className="flex items-center gap-2 sm:gap-4">
-          <a href={businessInfo.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram de Luxe Brows & Spa" className={light ? "hidden h-11 w-11 items-center justify-center border border-[#251f19]/15 text-[#8d6b4a] transition-colors hover:border-[#8d6b4a] lg:flex" : "hidden h-11 w-11 items-center justify-center border border-white/25 text-[#d4b48d] transition-colors hover:bg-white/10 lg:flex"}><Camera size={17} strokeWidth={1.5}/></a>
+          <a href={businessInfo.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram de Luxe Brows & Spa" className={light ? "hidden h-11 w-11 items-center justify-center border border-[#251f19]/15 text-[#8d6b4a] transition-colors hover:border-[#8d6b4a] lg:flex" : "hidden h-11 w-11 items-center justify-center border border-white/25 text-[#d4b48d] transition-colors hover:bg-white/10 lg:flex"}><BrandIcon name="instagram" size={18}/></a>
           <a href={getBookingLink()} target="_blank" rel="noopener noreferrer" className={light ? "hidden h-11 items-center gap-3 border border-[#241e1a] bg-[#241e1a] px-5 text-[10px] font-semibold uppercase tracking-[.16em] text-white transition-colors hover:bg-[#5f4c3e] md:inline-flex" : "hidden h-11 items-center gap-3 border border-[#d2b48b] bg-[#d2b48b] px-5 text-[10px] font-semibold uppercase tracking-[.16em] text-[#241e1a] transition-colors hover:bg-[#f1d2ab] md:inline-flex"}>Reservar ahora <ArrowUpRight size={14}/></a>
+          <a href={getBookingLink()} target="_blank" rel="noopener noreferrer" aria-label="Reservar cita" className={light ? "flex h-11 min-w-11 items-center justify-center gap-1.5 border border-[#9a7955]/35 bg-[#251e18] px-3 text-[#fff2df] lg:hidden" : "flex h-11 min-w-11 items-center justify-center gap-1.5 border border-[#d2b48b] bg-[#d2b48b] px-3 text-[#241e1a] lg:hidden"}><CalendarDays size={17} strokeWidth={1.6}/><span className="hidden text-[10px] font-semibold uppercase tracking-[.1em] min-[370px]:inline">Cita</span></a>
           <button ref={menuButton} type="button" aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"} aria-expanded={menuOpen} aria-controls="luxe-menu-mobile" onClick={() => setMenuOpen(!menuOpen)} className={light ? "flex h-12 w-12 items-center justify-center text-[#241e1a] lg:hidden" : "flex h-12 w-12 items-center justify-center text-white lg:hidden"}>
             {menuOpen ? <X size={26}/> : <Menu size={26}/>}
           </button>
@@ -125,7 +127,7 @@ export function Navbar() {
               <p className="mb-5 text-[11px] leading-6 tracking-wide text-[#dac7ac]">Cejas · Pestañas · Faciales · Corporales</p>
               <div className="grid grid-cols-[1fr_auto] gap-3">
                 <a href={getBookingLink()} target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)} className="luxe-cta min-w-0 px-3">Reservar mi cita <ArrowUpRight size={16}/></a>
-                <a href={businessInfo.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram de Luxe Brows & Spa" className="flex h-[54px] w-[54px] items-center justify-center border border-[#c2a17b]/50 text-[#deb98d]"><Camera size={19} strokeWidth={1.5}/></a>
+                <a href={businessInfo.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram de Luxe Brows & Spa" className="flex h-[54px] w-[54px] items-center justify-center border border-[#c2a17b]/50 text-[#deb98d]"><BrandIcon name="instagram" size={19}/></a>
               </div>
               <div className="mt-7 flex items-center justify-between gap-3 border-t border-[#c4a47e]/25 pt-4">
                 <span className="luxe-eyebrow text-[#caaa83]">By Carely Gonzalez</span>

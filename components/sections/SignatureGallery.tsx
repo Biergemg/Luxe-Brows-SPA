@@ -61,7 +61,7 @@ export function SignatureGallery() {
           <div data-reveal className="col-span-2 flex min-h-[175px] flex-col items-center justify-center gap-4 border-y border-[#9b7755]/40 px-4 py-9 text-center lg:col-span-12 lg:min-h-[220px] lg:gap-6">
             <Diamond size={20} strokeWidth={1} className="text-[#856440]" aria-hidden="true"/>
             <p className="luxe-serif text-[clamp(2.2rem,5vw,5rem)] italic leading-tight tracking-[-.06em] text-[#493629]">El lujo está en el detalle.</p>
-            <p className="luxe-eyebrow text-[#6e533c]">The Luxe Edit · By Carely Gonzalez</p>
+            <p className="luxe-eyebrow text-[#6e533c]">Luxe Brows & Spa · By Carely Gonzalez</p>
           </div>
 
           <figure data-reveal className="luxe-editorial-panel group relative col-span-2 min-w-0 bg-[#c9b9a5] lg:col-span-12">
@@ -80,7 +80,7 @@ export function SignatureGallery() {
 
         <div className="mt-9 flex flex-wrap items-center justify-between gap-4 border-t border-[#241e1a]/20 pt-5">
           <p className="luxe-eyebrow text-[#70533c]">Luxe Brows & Spa · By Carely Gonzalez</p>
-          <a href="#inicio" className="flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[.15em] text-[#70533c]">Volver al carrusel original <ArrowUpRight size={16}/></a>
+          <a href={businessInfo.social.instagram} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[.15em] text-[#70533c]">Ver más en Instagram <ArrowUpRight size={16}/></a>
         </div>
       </div>
 
@@ -91,7 +91,7 @@ export function SignatureGallery() {
         {selected !== null && (
           <div className="relative flex h-[100dvh] w-full flex-col">
             <div className="flex min-h-[70px] items-center justify-between gap-4 border-b border-white/15 px-5 sm:px-9">
-              <div><p className="luxe-eyebrow text-[#d4b38a]">The Luxe Edit</p><p className="luxe-serif mt-1 text-base sm:text-xl">{moments[selected].label}</p></div>
+              <div><p className="luxe-eyebrow text-[#d4b38a]">Luxe Brows & Spa</p><p className="luxe-serif mt-1 text-base sm:text-xl">{moments[selected].label}</p></div>
               <button type="button" onClick={() => setSelected(null)} aria-label="Cerrar galería" className="flex h-11 w-11 shrink-0 items-center justify-center border border-white/30 transition-colors hover:bg-white/15"><X size={20}/></button>
             </div>
             <div className="relative min-h-0 flex-1 overflow-hidden bg-[#15110e]" onTouchStart={(event) => { touchStart.current = event.touches[0]?.clientX ?? null; }} onTouchEnd={(event) => {

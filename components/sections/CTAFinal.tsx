@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { ArrowUpRight, Diamond, MessageCircle, Sparkles } from "lucide-react";
+import { ArrowUpRight, Diamond } from "lucide-react";
+import { BrandIcon } from "@/components/ui/BrandIcon";
 import { getBookingLink, generateWhatsAppLink } from "@/lib/utils";
 import { whatsappMessages } from "@/lib/site";
 
@@ -16,7 +17,7 @@ export function CTAFinal() {
           <p className="mt-8 max-w-xl border-l border-[#b99a72] pl-5 text-sm leading-8 text-[#ecdfcf]/85 lg:mt-10 lg:text-base">Tu próxima cita está a un clic de distancia. Reserva 24/7 en segundos. Si antes de agendar necesitas orientación, también podemos ayudarte por WhatsApp.</p>
           <div className="mt-9 flex flex-wrap gap-3 sm:gap-4">
             <a href={getBookingLink()} target="_blank" rel="noopener noreferrer" className="luxe-cta">Reservar ahora <ArrowUpRight size={17}/></a>
-            <a href={generateWhatsAppLink(whatsappMessages.booking)} target="_blank" rel="noopener noreferrer" className="luxe-cta luxe-cta-outline">Pedir asesoría <MessageCircle size={17}/></a>
+            <a href={generateWhatsAppLink(whatsappMessages.booking)} target="_blank" rel="noopener noreferrer" className="luxe-cta luxe-cta-outline">Pedir asesoría <BrandIcon name="whatsapp" size={17}/></a>
           </div>
           <div className="mt-11 border-t border-[#d6b389]/25 pt-7 lg:mt-15">
             <p className="luxe-eyebrow mb-5 text-[#dbb991]">Al contactarnos</p>
@@ -27,18 +28,18 @@ export function CTAFinal() {
             </ul>
           </div>
         </div>
-        <div data-reveal className="order-2 relative min-w-0 pb-[12%] pl-[7%] pr-[5%] lg:pb-[10%] lg:pr-[7%]">
+        <div data-reveal className="order-2 relative min-w-0 border border-[#b99568]/30 p-3 sm:p-5">
           <div className="absolute -left-2 bottom-[17%] top-[7%] h-[1px] w-[32%] origin-left -rotate-90 bg-[#c5a47c]/55" aria-hidden="true"/>
-          <div className="relative aspect-[.86/1] overflow-hidden border-[7px] border-[#3d3025] bg-[#66574b] shadow-[0_30px_75px_rgba(0,0,0,.3)] sm:aspect-[.96/1] sm:border-[12px]">
+          <div className="relative aspect-[.95/1] overflow-hidden border-[6px] border-[#3d3025] bg-[#66574b] shadow-[0_30px_75px_rgba(0,0,0,.3)] sm:aspect-[.96/1] sm:border-[10px]">
             <Image src="/images/gallery-1.webp" alt="Retrato editorial de belleza" fill loading="lazy" sizes="(max-width:1024px) 85vw, 43vw" className="object-cover"/>
             <div className="absolute inset-0 bg-gradient-to-t from-[#1a1410]/55 via-transparent to-transparent"/>
             <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between gap-3 text-[#faead5]">
               <span className="luxe-eyebrow">Luxe Brows & Spa</span>
-              <Sparkles size={18} strokeWidth={1.3}/>
+              <Diamond size={18} strokeWidth={1.3}/>
             </div>
           </div>
-          <div className="absolute bottom-0 right-0 flex aspect-square w-[31%] max-w-[160px] items-center justify-center rounded-full border border-[#b99568]/50 bg-[#201a15] text-[#d1ab7b] shadow-2xl" aria-hidden="true"><Diamond size={39} strokeWidth={.8}/></div>
-          <span className="luxe-serif absolute -left-1 top-[5%] -rotate-90 text-[clamp(1.4rem,3vw,2.4rem)] italic text-[#d9b78f]">The Luxe Edit</span>
+
+
         </div>
       </div>
     </section>

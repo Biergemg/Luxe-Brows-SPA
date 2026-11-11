@@ -7,7 +7,7 @@ export function Hero() {
     <section id="inicio" className="relative isolate overflow-hidden bg-[#17130f] text-[#f7f0e7]" aria-labelledby="hero-title">
       <div className="pointer-events-none absolute inset-0 opacity-70" style={{ background: "radial-gradient(circle at 84% 45%, rgba(154,111,67,.14), transparent 44%),radial-gradient(circle at 12% 12%, rgba(142,108,68,.13),transparent 38%)" }} />
       <div className="pointer-events-none absolute left-[-14%] top-0 h-full w-[45%] border-r border-[#c7a67f]/10 [transform:skewX(-17deg)]" />
-      <div className="luxe-container relative z-10 grid grid-cols-1 gap-5 pb-14 pt-[145px] sm:gap-10 sm:pt-[165px] lg:min-h-[835px] lg:grid-cols-[.85fr_1.15fr] lg:items-center lg:gap-10 lg:pb-16 lg:pt-[155px] xl:gap-18">
+      <div className="luxe-container relative z-10 grid grid-cols-1 gap-5 pb-14 pt-[42px] sm:gap-10 sm:pt-[60px] lg:min-h-[730px] lg:grid-cols-[.85fr_1.15fr] lg:items-center lg:gap-10 lg:pb-16 lg:pt-[75px] xl:gap-18">
         <div className="contents lg:flex lg:flex-col lg:justify-center">
           <div className="order-1 relative max-w-[710px] lg:order-none">
             <div data-hero-animate className="mb-4 flex items-center gap-3 sm:mb-8">
@@ -37,10 +37,7 @@ export function Hero() {
                 Explorar servicios <ArrowDownRight size={16} aria-hidden="true" />
               </a>
             </div>
-            <div data-hero-animate className="mt-7 flex items-center gap-2 text-[10px] font-medium uppercase tracking-[.15em] text-[#c9b391] lg:mt-12">
-              <span className="inline-block h-[6px] w-[6px] rotate-45 bg-[#c9a77b]"/>
-              <span>Contenido auténtico de Luxe Brows & Spa</span>
-            </div>
+
           </div>
         </div>
         <div data-hero-animate className="order-2 relative min-w-0 pt-2 lg:order-none lg:pl-3 lg:pt-0 xl:pl-8">

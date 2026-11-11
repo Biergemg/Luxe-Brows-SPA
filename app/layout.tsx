@@ -1,7 +1,6 @@
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/sections/Navbar";
-import { FloatingReserveButton } from "@/components/ui/FloatingReserveButton";
 import { MotionDirector } from "@/components/animations/MotionDirector";
 import { generateLocalBusinessSchema, generateFAQSchema } from "@/lib/jsonLd";
 import { metadata, viewport } from "@/lib/seo";
@@ -23,7 +22,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <TrackingScripts />
         <Navbar />
         {children}
-        <FloatingReserveButton />
         <MotionDirector />
       </body>
     </html>
