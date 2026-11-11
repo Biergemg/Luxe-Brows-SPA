@@ -1,117 +1,47 @@
-import React from 'react';
-import Image from 'next/image';
-import { siteConfig } from '@/lib/site';
-import { businessInfo } from '@/data/businessInfo';
-
-function InstagramIcon() {
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-[18px] w-[18px] fill-none stroke-current">
-      <rect x="3.25" y="3.25" width="17.5" height="17.5" rx="5" strokeWidth="1.75" />
-      <circle cx="12" cy="12" r="4.1" strokeWidth="1.75" />
-      <circle cx="17.6" cy="6.4" r="0.9" fill="currentColor" stroke="none" />
-    </svg>
-  );
-}
-
-function FacebookIcon() {
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-[18px] w-[18px] fill-current">
-      <path d="M13.37 20v-7.1h2.4l.36-2.77h-2.76V8.36c0-.8.22-1.35 1.37-1.35h1.46V4.53c-.25-.03-1.12-.11-2.13-.11-2.11 0-3.55 1.29-3.55 3.66v2.05H8.13v2.77h2.39V20h2.85Z" />
-    </svg>
-  );
-}
+import Image from "next/image";
+import { ArrowUpRight, Camera, Users } from "lucide-react";
+import { businessInfo } from "@/data/businessInfo";
+import { siteConfig } from "@/lib/site";
 
 export function Footer() {
-  const currentYear = new Date().getFullYear();
-
+  const year = new Date().getFullYear();
   return (
-    <footer className="bg-nude-bg border-t border-nude-text/10 pt-16 pb-8">
-      <div className="container mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
-          <div className="lg:col-span-1">
-            <a href="#" className="inline-flex items-center mb-6" aria-label="Inicio">
-              <Image
-                src="/images/brand/logo-round.png"
-                alt="Luxe Brows & Spa"
-                width={224}
-                height={224}
-                className="h-36 md:h-40 w-auto"
-              />
+    <footer className="bg-[#15120f] pb-28 pt-20 text-[#f3eade] md:pb-10 md:pt-24">
+      <div className="luxe-container">
+        <div className="grid gap-14 border-b border-white/15 pb-16 lg:grid-cols-[1.1fr_.8fr_.8fr_.8fr] lg:gap-10">
+          <div>
+            <a href="#inicio" aria-label="Volver al inicio" className="relative mb-5 block h-[145px] w-[210px] overflow-hidden">
+              <Image src="/images/brand/logo-round.png" alt="Luxe Brows & Spa · By Carely Gonzalez" fill sizes="210px" className="object-contain object-left"/>
             </a>
-            <p className="text-sm text-nude-muted leading-relaxed mb-6">
-              Cejas · Pestañas · Faciales · Corporales
-              <br />
-              Plaza LA FÉ · Local 1
-            </p>
-            <div className="flex gap-4">
-              {businessInfo.social.instagram && (
-                <a
-                  href={businessInfo.social.instagram}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Instagram"
-                  className="w-10 h-10 rounded-full border border-nude-text/15 flex items-center justify-center text-nude-text hover:border-nude-accent hover:text-nude-accent transition-colors"
-                >
-                  <InstagramIcon />
-                </a>
-              )}
-              {businessInfo.social.facebook && (
-                <a
-                  href={businessInfo.social.facebook}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Facebook"
-                  className="w-10 h-10 rounded-full border border-nude-text/15 flex items-center justify-center text-nude-text hover:border-nude-accent hover:text-nude-accent transition-colors"
-                >
-                  <FacebookIcon />
-                </a>
-              )}
+            <p className="max-w-xs text-sm leading-7 text-[#ded0bf]/70">Cejas · Pestañas · Faciales · Corporales<br/>Plaza LA FÉ · Local 1</p>
+            <div className="mt-7 flex gap-3">
+              <a href={businessInfo.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram de Luxe Brows & Spa" className="flex h-11 w-11 items-center justify-center border border-white/25 transition-colors hover:bg-white/10"><Camera size={17}/></a>
+              <a href={businessInfo.social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook de Luxe Brows & Spa" className="flex h-11 w-11 items-center justify-center border border-white/25 transition-colors hover:bg-white/10"><Users size={17}/></a>
             </div>
           </div>
-
           <div>
-            <h4 className="text-nude-text font-medium mb-6 uppercase tracking-wider text-sm">Navegación</h4>
-            <ul className="flex flex-col gap-3">
-              {siteConfig.navLinks.map((link) => (
-                <li key={link.href}>
-                  <a href={link.href} className="text-sm text-nude-muted hover:text-nude-accent transition-colors">
-                    {link.label}
-                  </a>
-                </li>
-              ))}
+            <p className="luxe-eyebrow mb-7 text-[#c4a17a]">Explora</p>
+            <ul className="space-y-4 text-sm text-[#e6d9c8]/80">
+              {[...siteConfig.navLinks, {label:"Galería",href:"#galeria"}, {label:"Experiencias",href:"#testimonios"}].map(link => <li key={link.href}><a href={link.href} className="transition-colors hover:text-[#d5ae7c]">{link.label}</a></li>)}
             </ul>
           </div>
-
           <div>
-            <h4 className="text-nude-text font-medium mb-6 uppercase tracking-wider text-sm">Contáctanos</h4>
-            <ul className="flex flex-col gap-4 text-sm text-nude-muted">
-              <li>
-                <span className="block text-nude-text mb-1">Dirección:</span>
-                {businessInfo.address.fullAddress}
-              </li>
-              <li>
-                <span className="block text-nude-text mb-1">WhatsApp:</span>
-                +{businessInfo.whatsapp}
-              </li>
-            </ul>
+            <p className="luxe-eyebrow mb-7 text-[#c4a17a]">Visítanos</p>
+            <address className="max-w-xs not-italic text-sm leading-8 text-[#e6d9c8]/80">{businessInfo.address.fullAddress}</address>
+            <p className="mt-3 text-sm text-[#e6d9c8]/80">WhatsApp: +{businessInfo.whatsapp}</p>
           </div>
-
           <div>
-            <h4 className="text-nude-text font-medium mb-6 uppercase tracking-wider text-sm">Disponibilidad</h4>
-            <ul className="flex flex-col gap-3 text-sm text-nude-muted mb-8">
-              <li>Lunes a sábado: 9:00 - 18:00</li>
-              <li>Domingo: Cerrado</li>
-            </ul>
+            <p className="luxe-eyebrow mb-7 text-[#c4a17a]">Horario</p>
+            <p className="text-sm leading-8 text-[#e6d9c8]/80">Lunes a sábado<br/>9:00 – 18:00<br/>Domingo: Cerrado</p>
+            <p className="mt-2 text-sm italic text-[#c4a17a]">Atención con previa cita</p>
+            <a href="#inicio" className="luxe-link mt-8 text-[#e6d9c8]">Volver arriba <ArrowUpRight size={15}/></a>
           </div>
         </div>
-
-        <div className="border-t border-nude-text/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-nude-muted">
-            &copy; {currentYear} {businessInfo.name}. Todos los derechos reservados.
-          </p>
-          <div className="flex gap-6">
-            <a href="/aviso-de-privacidad" className="text-xs text-nude-muted hover:text-nude-accent transition-colors">Aviso de privacidad</a>
-            <a href="/politicas-de-citas" className="text-xs text-nude-muted hover:text-nude-accent transition-colors">Políticas de citas</a>
+        <div className="flex flex-col gap-5 pt-8 text-[11px] leading-6 text-[#d0bea9]/85 md:flex-row md:items-center md:justify-between">
+          <span>© {year} Luxe Brows & Spa · By Carely Gonzalez</span>
+          <div className="flex flex-wrap gap-x-7 gap-y-2">
+            <a href="/aviso-de-privacidad" className="hover:text-white">Aviso de privacidad</a>
+            <a href="/politicas-de-citas" className="hover:text-white">Políticas de citas</a>
           </div>
         </div>
       </div>

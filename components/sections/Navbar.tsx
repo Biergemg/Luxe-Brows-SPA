@@ -1,150 +1,74 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
-import { siteConfig } from '@/lib/site';
-import { businessInfo } from '@/data/businessInfo';
-import { Button } from '../ui/Button';
-import { getBookingLink, generateWhatsAppLink } from '@/lib/utils';
-import { Menu, X, MessageCircle } from 'lucide-react';
+import { useEffect, useState } from "react";
+import { ArrowUpRight, Menu, X } from "lucide-react";
+import { businessInfo } from "@/data/businessInfo";
+import { getBookingLink } from "@/lib/utils";
 
-function InstagramIcon() {
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-3.5 w-3.5 fill-none stroke-current">
-      <rect x="3.25" y="3.25" width="17.5" height="17.5" rx="5" strokeWidth="1.75" />
-      <circle cx="12" cy="12" r="4.1" strokeWidth="1.75" />
-      <circle cx="17.6" cy="6.4" r="0.9" fill="currentColor" stroke="none" />
-    </svg>
-  );
-}
+const links = [
+  { label: "Servicios", href: "#servicios" },
+  { label: "Experiencias", href: "#testimonios" },
+  { label: "Galería", href: "#galeria" },
+  { label: "Ubicación", href: "#ubicacion" },
+  { label: "FAQ", href: "#faq" }
+];
 
 export function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    const onScroll = () => setScrolled(window.scrollY > 28);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    if (!menuOpen) return;
+    const onKeyDown = (e: KeyboardEvent) => { if (e.key === "Escape") setMenuOpen(false); };
+    const oldOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", onKeyDown);
+    return () => { document.body.style.overflow = oldOverflow; window.removeEventListener("keydown", onKeyDown); };
+  }, [menuOpen]);
+
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 border-b ${
-        isScrolled
-          ? 'bg-nude-bg/90 backdrop-blur-md border-nude-text/10 py-3'
-          : 'bg-transparent border-transparent py-5'
-      }`}
-    >
-      <div className="bg-nude-text">
-        <div className="container mx-auto flex items-center justify-between gap-4 px-6 py-1.5 text-[11px] text-nude-bg/90 md:px-12 md:text-xs">
-          <span className="truncate">
-            <span className="md:hidden">Lun-Sáb 9-18h</span>
-            <span className="hidden md:inline">Lunes a sábado 9:00-18:00 · Atención con previa cita</span>
-          </span>
-          <div className="flex shrink-0 items-center gap-4">
-            {businessInfo.social.instagram && (
-              <a
-                href={businessInfo.social.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-                className="transition-opacity hover:opacity-70"
-              >
-                <InstagramIcon />
-              </a>
-            )}
-            <a
-              href={generateWhatsAppLink()}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="WhatsApp"
-              className="transition-opacity hover:opacity-70"
-            >
-              <MessageCircle className="h-3.5 w-3.5" />
-            </a>
-          </div>
+    <header className={scrolled || menuOpen ? "fixed inset-x-0 top-0 z-50 border-b border-[#33271e]/10 bg-[#f6f2ec]/95 shadow-[0_8px_28px_rgba(25,20,15,.07)] backdrop-blur-xl transition-all duration-500" : "fixed inset-x-0 top-0 z-50 border-b border-white/15 bg-[#181512]/60 backdrop-blur-lg transition-all duration-500"}>
+      <div className={scrolled || menuOpen ? "border-b border-[#33271e]/10 text-[#5c4d3e]" : "border-b border-white/15 text-[#f6eee2]/70"}>
+        <div className="luxe-container flex h-[31px] items-center justify-between gap-3 text-[9px] font-semibold uppercase tracking-[.18em] sm:text-[10px]">
+          <span>Plaza LA FÉ · Ciudad Madero</span>
+          <span className="hidden sm:inline">Atención con previa cita</span>
+          <span>Lun–Sáb · 9:00–18:00</span>
         </div>
       </div>
-
-      <div className="container mx-auto px-6 md:px-12 flex items-center justify-between gap-6">
-        <div className="z-50 shrink-0">
-          <a href="#" className="flex items-center" aria-label="Inicio">
-            <Image
-              src="/images/brand/logo-round.png"
-              alt="Luxe Brows & Spa"
-              width={128}
-              height={128}
-              className={`w-auto transition-all duration-300 ${isScrolled ? 'h-20 md:h-24' : 'h-24 md:h-28'}`}
-              quality={100}
-              unoptimized
-              priority
-            />
-          </a>
-        </div>
-
-        <nav className="hidden md:flex items-center gap-8 min-w-0">
-          <ul className="flex items-center gap-8 text-sm font-medium text-nude-muted">
-            {siteConfig.navLinks.map((link) => (
-              <li key={link.href}>
-                <a href={link.href} className="hover:text-nude-accent transition-colors py-2 whitespace-nowrap">
-                  {link.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-          <Button variant="primary-nude" size="sm" asChild>
-            <a href={getBookingLink()} target="_blank" rel="noopener noreferrer">
-              Reservar ahora
-            </a>
-          </Button>
+      <div className="luxe-container flex h-[78px] items-center justify-between gap-4">
+        <a href="#inicio" aria-label="Luxe Brows & Spa · Inicio" className={scrolled || menuOpen ? "flex shrink-0 items-center gap-3 text-[#241e1a]" : "flex shrink-0 items-center gap-3 text-[#f8f1e8]"}>
+          <span className="luxe-serif text-4xl leading-none tracking-[-.08em] sm:text-[42px]">Luxe<span className="text-[#b8976e]">.</span></span>
+          <span className="border-l border-current/25 pl-3 text-[9px] font-semibold uppercase leading-[1.55] tracking-[.25em]">Brows<br/>& Spa</span>
+        </a>
+        <nav aria-label="Navegación principal" className="hidden items-center gap-6 lg:flex xl:gap-9">
+          {links.map((link) => (
+            <a key={link.href} href={link.href} className={scrolled ? "text-[11px] font-semibold uppercase tracking-[.15em] text-[#514638] transition-colors hover:text-[#aa8053]" : "text-[11px] font-semibold uppercase tracking-[.15em] text-[#f8f1e8]/85 transition-colors hover:text-[#d5ad79]"}>{link.label}</a>
+          ))}
         </nav>
-
-        <button
-          className="md:hidden p-2 text-nude-text z-50 focus:outline-none shrink-0"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label={mobileMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
-        >
-          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-
-        <div
-          className={`fixed inset-0 bg-nude-bg/95 backdrop-blur-lg z-40 flex flex-col items-center justify-center transition-opacity duration-300 md:hidden ${
-            mobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
-          }`}
-        >
-          <div className="mb-10">
-            <Image src="/images/brand/logo-round.png" alt="Luxe Brows & Spa" width={224} height={224} className="h-40 w-auto" quality={100} unoptimized />
-          </div>
-          <ul className="flex flex-col items-center gap-8 text-xl font-serif text-nude-text w-full px-6">
-            {siteConfig.navLinks.map((link) => (
-              <li key={link.href} className="w-full text-center border-b border-nude-text/10 pb-4">
-                <a
-                  href={link.href}
-                  className="block w-full hover:text-nude-accent transition-colors"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
-            <li className="w-full mt-4">
-              <Button variant="primary-nude" size="lg" className="w-full text-lg" asChild>
-                <a
-                  href={getBookingLink()}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Reservar ahora
-                </a>
-              </Button>
-            </li>
-          </ul>
+        <div className="flex items-center gap-4">
+          <a href={getBookingLink()} target="_blank" rel="noopener noreferrer" className={scrolled ? "hidden h-11 items-center gap-3 border border-[#241e1a] bg-[#241e1a] px-5 text-[10px] font-semibold uppercase tracking-[.16em] text-white transition-colors hover:bg-[#5f4c3e] md:inline-flex" : "hidden h-11 items-center gap-3 border border-[#d2b48b] bg-[#d2b48b] px-5 text-[10px] font-semibold uppercase tracking-[.16em] text-[#241e1a] transition-colors hover:bg-[#f1d2ab] md:inline-flex"}>Reservar ahora <ArrowUpRight size={14}/></a>
+          <button type="button" aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"} aria-expanded={menuOpen} aria-controls="luxe-menu-mobile" onClick={() => setMenuOpen(!menuOpen)} className={scrolled || menuOpen ? "flex h-12 w-12 items-center justify-center text-[#241e1a] lg:hidden" : "flex h-12 w-12 items-center justify-center text-white lg:hidden"}>{menuOpen ? <X size={26}/> : <Menu size={26}/>}</button>
         </div>
       </div>
+      {menuOpen && (
+        <nav id="luxe-menu-mobile" aria-label="Navegación móvil" className="fixed inset-x-0 top-[109px] bottom-0 z-50 min-h-[calc(100svh-109px)] overflow-y-auto bg-[#f6f2ec] px-8 pb-12 pt-8 text-[#241e1a] lg:hidden">
+          <span className="luxe-eyebrow mb-8 block text-[#997958]">Explora Luxe</span>
+          <div className="flex flex-col">
+            {links.map((link, i) => (
+              <a key={link.href} href={link.href} onClick={() => setMenuOpen(false)} className="luxe-serif flex items-center justify-between border-b border-[#241e1a]/15 py-4 text-[clamp(2.4rem,8vw,3.7rem)] tracking-[-.065em]"><span>{link.label}</span><span className="font-sans text-xs tracking-normal text-[#927458]">{String(i+1).padStart(2, "0")}</span></a>
+            ))}
+          </div>
+          <a href={getBookingLink()} target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)} className="luxe-cta luxe-cta-dark mt-10 w-full">Reservar mi cita <ArrowUpRight size={17}/></a>
+          <a href={businessInfo.social.instagram} target="_blank" rel="noopener noreferrer" className="luxe-eyebrow mt-8 block text-center text-[#786957]">Instagram · @luxebrowsspa</a>
+        </nav>
+      )}
     </header>
   );
 }

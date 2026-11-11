@@ -1,51 +1,30 @@
-import React from 'react';
-import { Button } from '../ui/Button';
-import { getBookingLink, generateWhatsAppLink } from '@/lib/utils';
-import { whatsappMessages } from '@/lib/site';
+import Image from "next/image";
+import { ArrowUpRight, MessageCircle } from "lucide-react";
+import { getBookingLink, generateWhatsAppLink } from "@/lib/utils";
+import { whatsappMessages } from "@/lib/site";
 
 export function CTAFinal() {
   return (
-    <section className="py-20 md:py-28 bg-nude-bg relative overflow-hidden border-t border-nude-text/5">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(147,112,78,0.14)_0%,transparent_70%)] pointer-events-none" />
-      <div className="grain-overlay-nude" />
-
-      <div className="container mx-auto px-6 md:px-12 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24 p-8 md:p-16 rounded-[32px] luxury-panel-nude relative overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(147,112,78,0.14),transparent_25%),linear-gradient(45deg,transparent_25%,rgba(58,44,34,0.03)_50%,transparent_75%)] bg-[length:auto,10px_10px] pointer-events-none" />
-
-          <div className="w-full lg:w-1/2 relative z-10">
-            <div className="section-kicker-nude mb-5">Reserva en línea</div>
-            <h2 className="font-serif text-3xl md:text-5xl font-medium text-nude-text mb-6 leading-tight">
-              Tu próxima cita está <br />
-              <span className="text-nude-accent italic">a un clic de distancia.</span>
-            </h2>
-            <p className="text-nude-muted text-lg mb-10 leading-relaxed">
-              Reserva 24/7 en segundos. Si antes de agendar necesitas orientación, también podemos ayudarte por WhatsApp.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="primary-nude" size="lg" className="w-full sm:w-auto" asChild>
-                <a href={getBookingLink()} target="_blank" rel="noopener noreferrer">
-                  Reservar ahora
-                </a>
-              </Button>
-              <Button variant="outline-nude" size="lg" className="w-full sm:w-auto" asChild>
-                <a href={generateWhatsAppLink(whatsappMessages.booking)} target="_blank" rel="noopener noreferrer">
-                  Pedir asesoría
-                </a>
-              </Button>
-            </div>
-          </div>
-
-          <div className="w-full lg:w-1/2 relative z-10">
-            <div className="rounded-[28px] border border-nude-text/8 bg-white/40 p-6 shadow-xl backdrop-blur-md">
-              <h4 className="mb-4 text-xl font-medium text-nude-text">Al contactarnos</h4>
-              <ul className="space-y-4 text-sm text-nude-muted">
-                <li>• Compártenos tu nombre.</li>
-                <li>• Cuéntanos qué buscas. Tratamientos de tu interés o dudas.</li>
-                <li>• Menciona tu disponibilidad. Horario y/o fecha preferente para verificar disponibilidad de agenda.</li>
-              </ul>
-            </div>
-          </div>
+    <section className="relative isolate overflow-hidden bg-[#1b1714] text-[#f6efe5]" aria-labelledby="final-title">
+      <div className="absolute inset-0 z-0 lg:left-[40%]">
+        <Image src="/images/gallery-1.webp" alt="Retrato editorial de belleza" fill sizes="(max-width:1024px) 100vw, 65vw" className="object-cover object-center" loading="lazy"/>
+      </div>
+      <div className="pointer-events-none absolute inset-0 z-[1] bg-[linear-gradient(90deg,#1b1714_0%,rgba(27,23,20,.95)_45%,rgba(27,23,20,.5)_75%,rgba(27,23,20,.25)_100%)] max-lg:bg-[linear-gradient(0deg,#1b1714_0%,rgba(27,23,20,.93)_53%,rgba(27,23,20,.4)_100%)]" />
+      <div className="luxe-container relative z-[2] flex min-h-[750px] flex-col justify-center py-28 md:py-36">
+        <p data-reveal className="luxe-eyebrow mb-8 text-[#c7a77d]">06 / Tu siguiente cita empieza aquí</p>
+        <h2 id="final-title" data-reveal className="luxe-serif max-w-5xl text-[clamp(3.9rem,8.2vw,9rem)] leading-[.98] tracking-[-.075em]">Es tu momento<br/>de <em className="text-[#d4b18b]">brillar.</em></h2>
+        <p data-reveal className="mt-8 max-w-lg text-base leading-8 text-[#ece1d4]/80">Tu próxima cita está a un clic de distancia. Reserva 24/7 en segundos. Si antes de agendar necesitas orientación, también podemos ayudarte por WhatsApp.</p>
+        <div data-reveal className="mt-10 flex flex-wrap gap-4">
+          <a href={getBookingLink()} target="_blank" rel="noopener noreferrer" className="luxe-cta">Reservar ahora <ArrowUpRight size={17}/></a>
+          <a href={generateWhatsAppLink(whatsappMessages.booking)} target="_blank" rel="noopener noreferrer" className="luxe-cta luxe-cta-outline">Pedir asesoría <MessageCircle size={17}/></a>
+        </div>
+        <div data-reveal className="mt-16 max-w-3xl border-t border-white/20 pt-6">
+          <p className="luxe-eyebrow mb-4 text-[#c8aa85]">Al contactarnos</p>
+          <ul className="grid gap-4 text-xs leading-6 text-[#ecdfd0]/75 sm:grid-cols-3">
+            <li>01 / Compártenos tu nombre.</li>
+            <li>02 / Cuéntanos qué buscas. Tratamientos de tu interés o dudas.</li>
+            <li>03 / Menciona tu disponibilidad. Horario o fecha preferente.</li>
+          </ul>
         </div>
       </div>
     </section>

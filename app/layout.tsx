@@ -2,46 +2,29 @@ import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/sections/Navbar";
 import { FloatingReserveButton } from "@/components/ui/FloatingReserveButton";
+import { MotionDirector } from "@/components/animations/MotionDirector";
 import { generateLocalBusinessSchema, generateFAQSchema } from "@/lib/jsonLd";
 import { metadata, viewport } from "@/lib/seo";
 import { TrackingScripts } from "@/components/integrations/TrackingScripts";
 
 export { metadata, viewport };
 
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-});
+const inter = Inter({ variable: "--font-inter", subsets: ["latin"], display: "swap" });
+const playfairDisplay = Playfair_Display({ variable: "--font-playfair-display", subsets: ["latin"], display: "swap" });
 
-const playfairDisplay = Playfair_Display({
-  variable: "--font-playfair-display",
-  subsets: ["latin"],
-});
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="es" className="scroll-smooth">
       <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(generateLocalBusinessSchema()) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQSchema()) }}
-        />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateLocalBusinessSchema()) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQSchema()) }} />
       </head>
-      <body
-        className={`${inter.variable} ${playfairDisplay.variable} antialiased bg-nude-bg text-nude-text`}
-      >
+      <body className={inter.variable + " " + playfairDisplay.variable + " antialiased"}>
         <TrackingScripts />
         <Navbar />
         {children}
         <FloatingReserveButton />
+        <MotionDirector />
       </body>
     </html>
   );
