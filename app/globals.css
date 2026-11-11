@@ -149,3 +149,28 @@ details[open] .luxe-caret { transform: rotate(45deg); }
   }
   .luxe-editorial-panel::after { display: none; }
 }
+
+
+/* V10.2 — responsive editorial system, one visual language across every viewport. */
+.luxe-lightbox {
+  overscroll-behavior: contain;
+  scrollbar-width: none;
+}
+.luxe-lightbox::backdrop { background: rgba(10, 8, 7, .94); }
+.luxe-editorial-panel:focus-within { outline: 2px solid #af885a; outline-offset: 3px; }
+.luxe-editorial-panel button:focus-visible { outline: 2px solid #fff4e7; outline-offset: -5px; }
+.luxe-editorial-panel img { will-change: auto; }
+.luxe-editorial-panel:hover img { filter: saturate(1.06); }
+.luxe-lift {
+  transition: transform .5s cubic-bezier(.22,.8,.2,1), box-shadow .5s ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .luxe-lift:hover { transform: translateY(-5px); box-shadow: 0 24px 56px rgba(45,30,18,.13); }
+}
+@media (max-width: 640px) {
+  .luxe-marquee-track > span { gap: 1.6rem; padding-right: 1.6rem; }
+  .luxe-eyebrow { letter-spacing: .19em; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .luxe-lift, .luxe-editorial-panel img { transition: none !important; }
+}

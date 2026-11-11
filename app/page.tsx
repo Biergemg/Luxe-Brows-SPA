@@ -1,5 +1,6 @@
 import { Hero } from "@/components/sections/Hero";
 import { EditorialIntro } from "@/components/sections/EditorialIntro";
+import { SignatureInterlude } from "@/components/sections/SignatureInterlude";
 import { ServiciosBento } from "@/components/sections/ServiciosBento";
 import { Testimonios } from "@/components/sections/Testimonios";
 import { SignatureGallery } from "@/components/sections/SignatureGallery";
@@ -13,6 +14,7 @@ export default function Home() {
     <main className="flex min-h-screen flex-col">
       <Hero />
       <EditorialIntro />
+      <SignatureInterlude />
       <ServiciosBento />
       <Testimonios />
       <SignatureGallery />

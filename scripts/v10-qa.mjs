@@ -33,6 +33,14 @@ try {
     await page.getByRole("button", { name: "Fotografía anterior" }).click();
     const restoredSlide = await page.locator("[data-luxe-slide]").getAttribute("data-luxe-slide");
     const carouselOK = slideButtons === 11 && initialSlide === "0" && nextSlide === "1" && restoredSlide === "0";
+    await page.getByRole("button", { name: /^Ampliar fotografía/ }).first().click();
+    const lightbox = page.getByRole("dialog", { name: "Galería fotográfica de Luxe Brows & Spa" });
+    const dialogOpen = await lightbox.isVisible();
+    await page.keyboard.press("ArrowRight");
+    const dialogNext = await lightbox.getByText("Facial", { exact: true }).count() === 1;
+    await page.keyboard.press("Escape");
+    const dialogClosed = !(await lightbox.isVisible());
+    const galleryOK = dialogOpen && dialogNext && dialogClosed;
     const tabs = await page.locator('[role="tab"]').count();
     await page.locator("#service-tab-2").click();
     const facialSelected = await page.locator("#service-tab-2").getAttribute("aria-selected");
@@ -41,13 +49,20 @@ try {
 
     if (width < 500) {
       await page.getByRole("button", { name: "Abrir menú" }).click();
-      const opened = await page.getByRole("navigation", { name: "Navegación móvil" }).isVisible();
+      const menuPanel = page.getByRole("navigation", { name: "Navegación móvil" });
+      const opened = await menuPanel.isVisible();
+      const menuGeometry = await menuPanel.evaluate((element) => {
+        const rect = element.getBoundingClientRect();
+        const topElement = document.elementFromPoint(window.innerWidth / 2, window.innerHeight / 2);
+        return { height: rect.height, inFront: element === topElement || element.contains(topElement) };
+      });
       await page.keyboard.press("Escape");
-      mobileMenuOK = opened && await page.getByRole("navigation", { name: "Navegación móvil" }).count() === 0;
+      mobileMenuOK = opened && menuGeometry.height >= 450 && menuGeometry.inFront &&
+        await page.getByRole("navigation", { name: "Navegación móvil" }).count() === 0;
     }
 
     const ok = response.status() === 200 && result.width <= width + 2 && result.booking >= 2 &&
-      result.broken === 0 && result.h1 === 1 && carouselOK && tabs === 6 && facialSelected === "true" &&
+      result.broken === 0 && result.h1 === 1 && carouselOK && galleryOK && tabs === 6 && facialSelected === "true" &&
       treatmentVisible === 1 && mobileMenuOK && pageErrors.length === 0;
     console.log(JSON.stringify({ viewport: width, result: ok ? "PASS" : "FAIL", documentWidth: result.width, bookingLinks: result.booking, pageErrors }));
     if (!ok) failures++;
